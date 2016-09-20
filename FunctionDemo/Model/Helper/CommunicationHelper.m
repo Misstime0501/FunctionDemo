@@ -87,12 +87,47 @@ static CommunicationHelper *communicationHelper = nil;
     }
 }
 
+- (void)fetchWeatherInformation
+{
+    NSDictionary *dictionary = [[NSDictionary alloc] init];
+    [self sendJsonRequest:dictionary
+                  httpURL:@""
+                  success:@selector(fetchWeatherInformationSucc:)
+                   failed:@selector(fetchWeatherInformationFail:)];
+}
+
+- (void)fetchWeatherInformationSucc:(ASIHTTPRequest *)request
+{
+    NSError *error                          = [request error];
+    NSDictionary *responseHeaderDictionary  = [request responseHeaders];
+    NSDictionary *responseBodyDictionary    = [self ASIRequestToDictionary:request];
+    
+    IWPFLog(@"请求返回的 Header 字典 = %@", responseHeaderDictionary);
+    IWPFLog(@"请求返回的 Body 字典 = %@",   responseBodyDictionary);
+    IWPFLog(@"请求返回的 Error = %@",      error);
+}
+
+- (void)fetchWeatherInformationFail:(ASIHTTPRequest *)request
+{
+    NSError *error                          = [request error];
+    NSDictionary *responseHeaderDictionary = [request responseHeaders];
+    NSDictionary *responseBodyDictionary = [self ASIRequestToDictionary:request];
+    IWPFLog(@"请求返回的 Header 字典 = %@", responseHeaderDictionary);
+    IWPFLog(@"请求返回的 Body 字典 = %@",   responseBodyDictionary);
+    IWPFLog(@"请求返回的 Error = %@",      error);
+}
 
 
 
 
-
-
+- (NSDictionary *)ASIRequestToDictionary:(ASIHTTPRequest *)request
+{
+    NSString *responseStr            = [request responseString];
+    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:[responseStr dataUsingEncoding:NSUTF8StringEncoding]
+                                                                       options:0
+                                                                         error:nil];
+    return responseDictionary;
+}
 
 
 

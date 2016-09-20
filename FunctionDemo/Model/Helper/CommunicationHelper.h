@@ -21,4 +21,8 @@
     NS_DESIGNATED_INITIALIZER;
 
 
+- (void)fetchWeatherInformation;
+- (void)fetchWeatherInformationSucc:(ASIHTTPRequest *)request;
+- (void)fetchWeatherInformationFail:(ASIHTTPRequest *)request;
+
 @end
