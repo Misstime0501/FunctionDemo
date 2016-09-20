@@ -7,6 +7,9 @@ target 'FunctionDemo' do
 
   # Pods for FunctionDemo
 
+  pod 'PPRevealSideViewController', '~> 1.2'
+
+
   target 'FunctionDemoTests' do
     inherit! :search_paths
     # Pods for testing
