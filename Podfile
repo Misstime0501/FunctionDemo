@@ -8,7 +8,7 @@ target 'FunctionDemo' do
   # Pods for FunctionDemo
 
   pod 'PPRevealSideViewController', '~> 1.2'
-
+  pod 'ASIHTTPRequest', '~> 1.8'
 
   target 'FunctionDemoTests' do
     inherit! :search_paths

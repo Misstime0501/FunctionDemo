@@ -18,6 +18,7 @@
 		D4A196721D90D1EC009B8D8B /* FunctionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196711D90D1EC009B8D8B /* FunctionDemoTests.m */; };
 		D4A1967D1D90D1EC009B8D8B /* FunctionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A1967C1D90D1EC009B8D8B /* FunctionDemoUITests.m */; };
 		D4A196A21D90DC00009B8D8B /* IWPFWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196A11D90DC00009B8D8B /* IWPFWeatherViewController.m */; };
+		D4A196A61D90E577009B8D8B /* CommunicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196A51D90E577009B8D8B /* CommunicationHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		D4A1969F1D90DBD3009B8D8B /* MacroOfDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroOfDefine.h; path = Model/Marcos/MacroOfDefine.h; sourceTree = "<group>"; };
 		D4A196A01D90DC00009B8D8B /* IWPFWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFWeatherViewController.h; path = Controller/IWPFWeatherViewController.h; sourceTree = "<group>"; };
 		D4A196A11D90DC00009B8D8B /* IWPFWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherViewController.m; path = Controller/IWPFWeatherViewController.m; sourceTree = "<group>"; };
+		D4A196A41D90E577009B8D8B /* CommunicationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommunicationHelper.h; path = Model/Helper/CommunicationHelper.h; sourceTree = "<group>"; };
+		D4A196A51D90E577009B8D8B /* CommunicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommunicationHelper.m; path = Model/Helper/CommunicationHelper.m; sourceTree = "<group>"; };
 		E329D9F65F5A00562FB3118F /* libPods-FunctionDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E815D586EE2CA791D5A9C94B /* Pods-FunctionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemo/Pods-FunctionDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F657ADF43AC3C6C85BF7F2A5 /* Pods-FunctionDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoUITests/Pods-FunctionDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +198,7 @@
 		D4A196991D90DB6D009B8D8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4A196A31D90E53E009B8D8B /* Helper */,
 				D4A1969C1D90DB95009B8D8B /* Macros */,
 			);
 			name = Model;
@@ -224,6 +228,15 @@
 				D4A1969F1D90DBD3009B8D8B /* MacroOfDefine.h */,
 			);
 			name = Macros;
+			sourceTree = "<group>";
+		};
+		D4A196A31D90E53E009B8D8B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D4A196A41D90E577009B8D8B /* CommunicationHelper.h */,
+				D4A196A51D90E577009B8D8B /* CommunicationHelper.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +505,7 @@
 			files = (
 				D4A1965C1D90D1EC009B8D8B /* AppDelegate.m in Sources */,
 				D4A196591D90D1EC009B8D8B /* main.m in Sources */,
+				D4A196A61D90E577009B8D8B /* CommunicationHelper.m in Sources */,
 				D4A196A21D90DC00009B8D8B /* IWPFWeatherViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
