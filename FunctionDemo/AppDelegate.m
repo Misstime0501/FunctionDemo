@@ -7,16 +7,37 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
-@end
+#import "MacroOfDefine.h"
+#import "IWPFWeatherViewController.h"
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window                         = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    IWPFLog(@"window size = CGRectMark(%f, %f, %f, %f)",
+            self.window.frame.origin.x,
+            self.window.frame.origin.y,
+            self.window.frame.size.width,
+            self.window.frame.size.height);
+    
+    IWPFWeatherViewController *weatherView     = [[IWPFWeatherViewController alloc] init];
+    
+    UINavigationController *nav         = [[UINavigationController alloc] initWithRootViewController:weatherView];
+    
+    _revealSideViewController       = [[PPRevealSideViewController alloc] initWithRootViewController:nav];
+    
+    [_revealSideViewController setDirectionsToShowBounce:PPRevealSideDirectionNone];
+    [_revealSideViewController setPanInteractionsWhenClosed:PPRevealSideInteractionContentView | PPRevealSideInteractionNavigationBar];
+    
+    self.window.rootViewController = _revealSideViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
