@@ -45,6 +45,7 @@
 		7699A4E1962E29167205B0F2 /* libPods-FunctionDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06495CABF4762827BC2DC1F /* Pods-FunctionDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoTests/Pods-FunctionDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF72D7E79B8912135AA8B17F /* Pods-FunctionDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoTests/Pods-FunctionDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4302A1A1D9115C900501060 /* IWPFBlockTypeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWPFBlockTypeHelper.h; sourceTree = "<group>"; };
 		D4A196541D90D1EC009B8D8B /* FunctionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A196581D90D1EC009B8D8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4A1965A1D90D1EC009B8D8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 			children = (
 				D4A196A41D90E577009B8D8B /* CommunicationHelper.h */,
 				D4A196A51D90E577009B8D8B /* CommunicationHelper.m */,
+				D4302A1A1D9115C900501060 /* IWPFBlockTypeHelper.h */,
 			);
 			name = Helper;
 			sourceTree = "<group>";

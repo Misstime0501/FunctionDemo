@@ -10,6 +10,7 @@
 
 #import "ASIHTTPRequest.h"
 #import "MacroOfDefine.h"
+#import "IWPFBlockTypeHelper.h"
 
 @interface CommunicationHelper : NSObject
 
