@@ -1,6 +1,6 @@
 //
-//  FunctionDemoTests.m
-//  FunctionDemoTests
+//  IWPFCommunicationHelper.m
+//  FunctionDemo
 //
 //  Created by Chen Li on 16/9/20.
 //  Copyright © 2016年 Chen Li. All rights reserved.
@@ -8,11 +8,16 @@
 
 #import <XCTest/XCTest.h>
 
-@interface FunctionDemoTests : XCTestCase
+#import "CommunicationHelper.h"
+
+#import "IWPFTestCase.h"
+
+
+@interface IWPFCommunicationHelper : IWPFTestCase
 
 @end
 
-@implementation FunctionDemoTests
+@implementation IWPFCommunicationHelper
 
 - (void)setUp {
     [super setUp];
@@ -24,8 +29,15 @@
     [super tearDown];
 }
 
-
-
+- (void)testFetchWeatherInformation
+{
+    CommunicationHelper *communicationHelper = [CommunicationHelper sharedCommunicationHelper];
+    
+    [communicationHelper fetchWeatherInformation];
+    
+    
+    
+}
 
 
 

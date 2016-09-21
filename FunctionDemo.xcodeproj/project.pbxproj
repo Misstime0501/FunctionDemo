@@ -10,6 +10,8 @@
 		78C19392819B6B78A9AB82D1 /* libPods-FunctionDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E329D9F65F5A00562FB3118F /* libPods-FunctionDemoTests.a */; };
 		85B3E35D9283426E24726953 /* libPods-FunctionDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7699A4E1962E29167205B0F2 /* libPods-FunctionDemoUITests.a */; };
 		D0BDA832F08823B2F7EFCD96 /* libPods-FunctionDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0E37770A8116D5FA2E208C /* libPods-FunctionDemo.a */; };
+		D4302A1D1D9126A800501060 /* IWPFTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D4302A1C1D9126A800501060 /* IWPFTestCase.m */; };
+		D4302A1F1D91284C00501060 /* IWPFCommunicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4302A1E1D91284C00501060 /* IWPFCommunicationHelper.m */; };
 		D4A196591D90D1EC009B8D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196581D90D1EC009B8D8B /* main.m */; };
 		D4A1965C1D90D1EC009B8D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A1965B1D90D1EC009B8D8B /* AppDelegate.m */; };
 		D4A196621D90D1EC009B8D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A196601D90D1EC009B8D8B /* Main.storyboard */; };
@@ -46,6 +48,9 @@
 		B06495CABF4762827BC2DC1F /* Pods-FunctionDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoTests/Pods-FunctionDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF72D7E79B8912135AA8B17F /* Pods-FunctionDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoTests/Pods-FunctionDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4302A1A1D9115C900501060 /* IWPFBlockTypeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWPFBlockTypeHelper.h; sourceTree = "<group>"; };
+		D4302A1B1D9126A800501060 /* IWPFTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPFTestCase.h; sourceTree = "<group>"; };
+		D4302A1C1D9126A800501060 /* IWPFTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPFTestCase.m; sourceTree = "<group>"; };
+		D4302A1E1D91284C00501060 /* IWPFCommunicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPFCommunicationHelper.m; sourceTree = "<group>"; };
 		D4A196541D90D1EC009B8D8B /* FunctionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A196581D90D1EC009B8D8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4A1965A1D90D1EC009B8D8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,8 +176,11 @@
 		D4A196701D90D1EC009B8D8B /* FunctionDemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				D4302A1B1D9126A800501060 /* IWPFTestCase.h */,
+				D4302A1C1D9126A800501060 /* IWPFTestCase.m */,
 				D4A196711D90D1EC009B8D8B /* FunctionDemoTests.m */,
 				D4A196731D90D1EC009B8D8B /* Info.plist */,
+				D4302A1E1D91284C00501060 /* IWPFCommunicationHelper.m */,
 			);
 			path = FunctionDemoTests;
 			sourceTree = "<group>";
@@ -517,6 +525,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A196721D90D1EC009B8D8B /* FunctionDemoTests.m in Sources */,
+				D4302A1F1D91284C00501060 /* IWPFCommunicationHelper.m in Sources */,
+				D4302A1D1D9126A800501060 /* IWPFTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

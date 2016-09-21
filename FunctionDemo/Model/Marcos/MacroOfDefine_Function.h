@@ -7,7 +7,6 @@
 //
 
 #ifndef MacroOfDefine_Function_h
-
 #define MacroOfDefine_Function_h
 
 
@@ -17,6 +16,17 @@
 #else
 #define IWPFLog(...)
 #endif
+
+
+#define WAIT                                                                \
+do {                                                                        \
+    [self expectationForNotification:@"RSBaseTest" object:nil handler:nil]; \
+    [self waitForExpectationsWithTimeout:60 handler:nil];                   \
+} while (0);
+
+
+#define NOTIFY                                                              \
+[[NSNotificationCenter defaultCenter] postNotificationName:@"RSBaseTest" object:nil];
 
 
 #endif /* MacroOfDefine_Function_h */
