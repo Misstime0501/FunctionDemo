@@ -16,8 +16,8 @@ typedef NS_ENUM(NSUInteger, LHTDScrollViewCellType){
     LHTDScrollViewCellTypeWeatherMap,
 };
 
-static const CGFloat kNumberOfSections                  = 4.0;
-static const CGFloat kRowsInSection                     = 1.0;
+static const CGFloat kNumberOfSections                  = 1.0;
+static const CGFloat kRowsInSection                     = 50.0;
 
 // TODO: 此处要判断机型,从而改变尺寸
 static const CGFloat kCellTypeCurrentWeatherHeight      = 568.0;
@@ -42,6 +42,12 @@ static NSString *const kTableViewCellTypeWeatherMapIdentifier       = @"LHTDCell
 @property (strong, nonatomic)   NSMutableArray      *tomorrowWeatherInformationArray;
 @property (strong, nonatomic)   NSMutableArray      *forecastWeatherInformationArray;
 @property (strong, nonatomic)   NSMutableArray      *weatherMapInformationArray;
+
+
+//  背景图片
+@property (strong, nonatomic)   UIImage             *viewControllerBackgroundImage;
+
+
 
 
 - (instancetype)init;

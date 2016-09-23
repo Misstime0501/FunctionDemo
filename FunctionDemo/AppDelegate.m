@@ -16,6 +16,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // 判断系统版本号的正确姿势
+    NSLog(@"%@", [[UIDevice currentDevice] systemVersion]);
+    
+    
+    
+    
+    
     self.window                         = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     IWPFLog(@"window size = CGRectMark(%f, %f, %f, %f)",

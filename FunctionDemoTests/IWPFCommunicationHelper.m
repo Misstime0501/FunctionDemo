@@ -33,7 +33,7 @@
 {
     CommunicationHelper *communicationHelper = [CommunicationHelper sharedCommunicationHelper];
     
-    [communicationHelper fetchWeatherInformation];
+    [communicationHelper fetchWeatherInformation:NO];
     
     
     

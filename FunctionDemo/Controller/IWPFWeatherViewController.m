@@ -35,9 +35,8 @@
 {
     [super viewWillAppear:animated];
     
-
+    
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,16 +53,19 @@
     
 }
 
-
 #pragma mark - PPRevealSideViewController
 
-- (void)showRight:(id)sender
+- (void)addSiteViewController:(id)sender
 {
     //    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionRight
     //                                                         withOffset:ScreenWidth / 4
     //                                                           animated:YES];
 }
 
+- (void)showMoreInformationViewController:(id)sender
+{
+    
+}
 
 
 
@@ -83,12 +85,16 @@
 }
 
 
+
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    return cell;
+    //    static NSString *CellIdentifier = @"Cell";
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    //
+    //    return cell;
     
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -97,7 +103,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"Main %ld", (long)indexPath.row];
-    
+    cell.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.1];
     return cell;
 }
 
@@ -115,24 +121,37 @@
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self.objects removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
+    //    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    //        [self.objects removeObjectAtIndex:indexPath.row];
+    //        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    //    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    //        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    //    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #pragma mark - Private Methods
 
 - (void)viewConfigure
 {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor brownColor];
 }
 
 - (void)tableViewConfigure
 {
+    
     [self.view addSubview:self.itemTableView];
 }
 
@@ -140,11 +159,13 @@
 {
     if (!_tableView)
     {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(ZERO, ZERO, ScreenWidth, ScreenHeight)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(ZERO, ZERO, SCREEN_WIDTH, SCREEN_HEIGHT)];
         
         _tableView.bounces = YES;
         _tableView.tableFooterView = [[UIView alloc] init];
-        _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        //        _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _tableView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1];
+        
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -156,8 +177,13 @@
 {
     self.navigationItem.title = @"天气";
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"北土城西路" style:UIBarButtonItemStylePlain target:self action:@selector(showRight:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(showRight:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"北土城西路" style:UIBarButtonItemStylePlain target:self action:@selector(addSiteViewController:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(showMoreInformationViewController:)];
+    
+    //    self.navigationController.navigationBar.translucent = YES;
+    //    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor clearColor]];
     
 }
 

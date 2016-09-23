@@ -53,6 +53,7 @@ static CommunicationHelper *communicationHelper = nil;
 #pragma mark -
 - (void)sendJsonRequest:(NSDictionary *)sendData
                 httpURL:(NSString *)serverPath
+           asynchronous:(BOOL)asynchronous
                 success:(SEL)successAction
                  failed:(SEL)failedAction
 {
@@ -79,7 +80,14 @@ static CommunicationHelper *communicationHelper = nil;
         // 是否允许接收压缩的响应
         [request setAllowCompressedResponse:YES];
         
-        [request startAsynchronous];
+        if (asynchronous)
+        {
+            [request startAsynchronous];
+        }
+        else
+        {
+            [request startSynchronous];
+        }
     }
     else
     {
@@ -87,11 +95,12 @@ static CommunicationHelper *communicationHelper = nil;
     }
 }
 
-- (void)fetchWeatherInformation
+- (void)fetchWeatherInformation:(BOOL)asynchronous
 {
     NSDictionary *dictionary = [[NSDictionary alloc] init];
     [self sendJsonRequest:dictionary
                   httpURL:@""
+             asynchronous:asynchronous
                   success:@selector(fetchWeatherInformationSucc:)
                    failed:@selector(fetchWeatherInformationFail:)];
 }

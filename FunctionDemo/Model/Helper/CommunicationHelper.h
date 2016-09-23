@@ -14,6 +14,8 @@
 
 @interface CommunicationHelper : NSObject
 
+//@property (weak, nonatomic) 
+
 
 + (CommunicationHelper *)sharedCommunicationHelper;
 
@@ -21,7 +23,7 @@
     NS_DESIGNATED_INITIALIZER;
 
 
-- (void)fetchWeatherInformation;
+- (void)fetchWeatherInformation:(BOOL)asynchronous;
 - (void)fetchWeatherInformationSucc:(ASIHTTPRequest *)request;
 - (void)fetchWeatherInformationFail:(ASIHTTPRequest *)request;
 
