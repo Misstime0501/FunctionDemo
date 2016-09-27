@@ -21,4 +21,9 @@
 typedef void (^IWPFRequestResultBlock)(BOOL succeeded, NSDictionary *headInformation, NSDictionary *bodyInformation, NSError *error);
 
 
+typedef void (^IWPFRequestSuccessBlock) (id responseObject);
+typedef void (^IWPFRequestFailureBlock) (NSError *error);
+
+
+
 #endif /* IWPFBlockTypeHelper_h */

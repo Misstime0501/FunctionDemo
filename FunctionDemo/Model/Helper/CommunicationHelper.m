@@ -6,140 +6,92 @@
 //  Copyright © 2016年 Chen Li. All rights reserved.
 //
 
+#import "AFNetworking.h"
 #import "CommunicationHelper.h"
 
-static CommunicationHelper *communicationHelper = nil;
+@implementation CommunicationClient
 
++ (instancetype)sharedCommunicationClient
+{
+    static CommunicationClient *_sharedCommunicationClient = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        _sharedCommunicationClient = [[CommunicationClient alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL_STRING]];
+        _sharedCommunicationClient.responseSerializer = [AFJSONResponseSerializer serializer];
+        
+        _sharedCommunicationClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
+                                                                                                     @"text/html",
+                                                                                                     @"text/json",
+                                                                                                     @"text/javascript",
+                                                                                                     @"application/x-javascript",
+                                                                                                     @"text/plain",
+                                                                                                     @"image/gif",
+                                                                                                     nil];
+        _sharedCommunicationClient.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+    });
+    return _sharedCommunicationClient;
+}
+
+@end
 
 @implementation CommunicationHelper
 
-#pragma mark - 初始
-
-+ (CommunicationHelper *)sharedCommunicationHelper
+#pragma mark - AFN网络请求
+#pragma mark POST请求
++ (void)requestMethUsePostWithPath:(NSString *)path
+                            params:(NSDictionary *)params
+                           success:(IWPFRequestSuccessBlock)success
+                           failure:(IWPFRequestFailureBlock)failure
 {
-    static dispatch_once_t predicate;
-    dispatch_once(&predicate, ^{
-        communicationHelper = (CommunicationHelper *)@"CommunicationHelper";
-        communicationHelper = [[CommunicationHelper alloc] init];
-    });
+    CommunicationClient *manager = [CommunicationClient sharedCommunicationClient];
     
-    // 防止子类使用
-    NSString *classString = NSStringFromClass([self class]);
-    if ([classString isEqualToString:@"CommunicationHelper"] == NO)
-    {
-        NSParameterAssert(nil);
-    }
-    return communicationHelper;
+    [manager POST:path
+       parameters:params
+         progress:^(NSProgress * _Nonnull uploadProgress) { }
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                        if (success == nil)
+                            return;
+                        success(responseObject);
+                    }
+          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                        if (failure == nil)
+                            return;
+                        failure(error);
+                    }
+    ];
 }
 
-- (instancetype)init
-{
-    NSString *string = (NSString *)communicationHelper;
-    if ([string isKindOfClass:[NSString class]] == YES && [string isEqualToString:@"CommunicationHelper"])
-    {
-        self = [super init];
-        if (self)
-        {
-            
-        }
-        return self;
-    }
-    else
-    {
-        return nil;
-    }
+#pragma mark GET请求
++ (void)requestMethUseGetWithPath:(NSString *)path
+                           params:(NSDictionary *)params
+                          success:(IWPFRequestSuccessBlock)success
+                          failure:(IWPFRequestFailureBlock)failure {
+    
+    CommunicationClient *manager = [CommunicationClient sharedCommunicationClient];
+    
+    [manager GET:path
+      parameters:params
+        progress:^(NSProgress * _Nonnull downloadProgress) { }
+         success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    if (success == nil)
+                        return;
+                    success(responseObject);
+                }
+         failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    if (failure == nil) return;
+                    failure(error);
+                }
+    ];
 }
+
 
 #pragma mark -
-- (void)sendJsonRequest:(NSDictionary *)sendData
-                httpURL:(NSString *)serverPath
-           asynchronous:(BOOL)asynchronous
-                success:(SEL)successAction
-                 failed:(SEL)failedAction
-{
-    if ([NSJSONSerialization isValidJSONObject:sendData])
-    {
-        NSError *error;
-        
-        NSData  *jsonData           = [NSJSONSerialization dataWithJSONObject:sendData
-                                                                      options:NSJSONWritingPrettyPrinted
-                                                                        error:&error];
-        NSMutableData *tempJsonData = [NSMutableData dataWithData:jsonData];
-        NSURL *url                  = [NSURL URLWithString:serverPath];
-        
-        ASIHTTPRequest *request     = [ASIHTTPRequest requestWithURL:url];
-        [request setRequestHeaders:[[NSMutableDictionary alloc] initWithObjectsAndKeys:@"gzip", @"Content-Type",
-                                                                                       @"gzip", @"Accept-Type", nil]];
-        [request addRequestHeader:@"Content-Type" value:@"application/json; encoding=utf-8"];
-        [request addRequestHeader:@"Accept"       value:@"application/json"];
-        [request setPostBody:tempJsonData];
-        [request setRequestMethod:@"POST"];
-        [request setDelegate:self];
-        // 是否压缩请求 Body
-        [request setShouldCompressRequestBody:YES];
-        // 是否允许接收压缩的响应
-        [request setAllowCompressedResponse:YES];
-        
-        if (asynchronous)
-        {
-            [request startAsynchronous];
-        }
-        else
-        {
-            [request startSynchronous];
-        }
-    }
-    else
-    {
-        IWPFLog(@"Error: 传入的请求体不是合法的 Json 格式");
-    }
+#pragma mark 取消网络请求
++ (void)cancelAllRequest {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager.operationQueue cancelAllOperations];
 }
-
-- (void)fetchWeatherInformation:(BOOL)asynchronous
-{
-    NSDictionary *dictionary = [[NSDictionary alloc] init];
-    [self sendJsonRequest:dictionary
-                  httpURL:@""
-             asynchronous:asynchronous
-                  success:@selector(fetchWeatherInformationSucc:)
-                   failed:@selector(fetchWeatherInformationFail:)];
-}
-
-- (void)fetchWeatherInformationSucc:(ASIHTTPRequest *)request
-{
-    NSError *error                          = [request error];
-    NSDictionary *responseHeaderDictionary  = [request responseHeaders];
-    NSDictionary *responseBodyDictionary    = [self ASIRequestToDictionary:request];
-    
-    IWPFLog(@"请求返回的 Header 字典 = %@", responseHeaderDictionary);
-    IWPFLog(@"请求返回的 Body 字典 = %@",   responseBodyDictionary);
-    IWPFLog(@"请求返回的 Error = %@",      error);
-}
-
-- (void)fetchWeatherInformationFail:(ASIHTTPRequest *)request
-{
-    NSError *error                          = [request error];
-    NSDictionary *responseHeaderDictionary = [request responseHeaders];
-    NSDictionary *responseBodyDictionary = [self ASIRequestToDictionary:request];
-    IWPFLog(@"请求返回的 Header 字典 = %@", responseHeaderDictionary);
-    IWPFLog(@"请求返回的 Body 字典 = %@",   responseBodyDictionary);
-    IWPFLog(@"请求返回的 Error = %@",      error);
-}
-
-
-
-
-- (NSDictionary *)ASIRequestToDictionary:(ASIHTTPRequest *)request
-{
-    NSString *responseStr            = [request responseString];
-    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:[responseStr dataUsingEncoding:NSUTF8StringEncoding]
-                                                                       options:0
-                                                                         error:nil];
-    return responseDictionary;
-}
-
-
-
 
 
 @end

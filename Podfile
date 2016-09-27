@@ -7,8 +7,13 @@ target 'FunctionDemo' do
 
   # Pods for FunctionDemo
 
-  pod 'PPRevealSideViewController', '~> 1.2'
-  pod 'ASIHTTPRequest', '~> 1.8'
+  # pod 'PPRevealSideViewController', '~> 1.2'
+  # pod 'ASIHTTPRequest', '~> 1.8'
+
+  pod 'MMDrawerController', '~> 0.5.7' 
+  pod 'AFNetworking', '~> 3.0'
+  pod 'SVProgressHUD', '~> 2.0'  
+  pod 'Masonry', '~> 1.0'
 
   target 'FunctionDemoTests' do
     inherit! :search_paths

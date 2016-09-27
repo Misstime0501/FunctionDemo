@@ -8,23 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASIHTTPRequest.h"
+#import "AFHTTPSessionManager.h"
+
 #import "MacroOfDefine.h"
 #import "IWPFBlockTypeHelper.h"
 
+
+@interface CommunicationClient : AFHTTPSessionManager
+
++ (instancetype)sharedCommunicationClient;
+
+@end
+
+
 @interface CommunicationHelper : NSObject
 
-//@property (weak, nonatomic) 
+
++ (void)requestMethUseGetWithPath:(NSString *)path
+                           params:(NSDictionary *)params
+                          success:(IWPFRequestSuccessBlock)success
+                          failure:(IWPFRequestFailureBlock)failure;
 
 
-+ (CommunicationHelper *)sharedCommunicationHelper;
++ (void)requestMethUsePostWithPath:(NSString *)path
+                           params:(NSDictionary *)params
+                          success:(IWPFRequestSuccessBlock)success
+                          failure:(IWPFRequestFailureBlock)failure;
 
-- (instancetype)init
-    NS_DESIGNATED_INITIALIZER;
++ (void)cancelAllRequest;
 
-
-- (void)fetchWeatherInformation:(BOOL)asynchronous;
-- (void)fetchWeatherInformationSucc:(ASIHTTPRequest *)request;
-- (void)fetchWeatherInformationFail:(ASIHTTPRequest *)request;
 
 @end
