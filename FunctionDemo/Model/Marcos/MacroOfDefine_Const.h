@@ -29,6 +29,34 @@
 
 
 
+
+
+#pragma mark - Left Menu
+#define LEFT_MENU_TITLE_ARRAY                                       @[@"用户登录", @"帮助支持", @"意见反馈", \
+                                                                      @"关于我们", @"合作方式", @"好评鼓励", @"设置"]
+#define LEFT_MENU_CELL_IMAGE_ARRAY                                  @[@"", @"", @"", \
+                                                                      @"", @"", @"", @""]
+#define LEFT_MENU_CELL_HEIGHT                                       55
+
+
+#pragma mark - Left Menu Table Cell
+#define LEFT_MENU_TABLE_CELL_WIDTH                                  SCREEN_WIDTH
+#define LEFT_MENU_TABLE_CELL_HEIGHT                                 LEFT_MENU_CELL_HEIGHT
+
+#define LEFT_MENU_TABLE_CELL_IMAGE_VIEW_X                           30
+#define LEFT_MENU_TABLE_CELL_IMAGE_VIEW_Y                           9
+#define LEFT_MENU_TABLE_CELL_IMAGE_VIEW_WIDTH                       35
+#define LEFT_MENU_TABLE_CELL_IMAGE_VIEW_HEIGHT                      35
+
+#define LEFT_MENU_TABLE_CELL_LABEL_X                                90
+#define LEFT_MENU_TABLE_CELL_LABEL_Y                                10
+#define LEFT_MENU_TABLE_CELL_LABEL_WIDTH                            60
+#define LEFT_MENU_TABLE_CELL_LABEL_HEIGHT                           35
+
+
+
+
+
 #define ADDSITE_SEARCHBAR_HEIGHT                                    44
 #define ADDSITE_SEARCHBAR_PLACEHOLDER                               @"更多城市"
 

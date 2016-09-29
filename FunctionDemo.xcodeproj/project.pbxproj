@@ -10,6 +10,11 @@
 		78C19392819B6B78A9AB82D1 /* libPods-FunctionDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E329D9F65F5A00562FB3118F /* libPods-FunctionDemoTests.a */; };
 		85B3E35D9283426E24726953 /* libPods-FunctionDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7699A4E1962E29167205B0F2 /* libPods-FunctionDemoUITests.a */; };
 		D0BDA832F08823B2F7EFCD96 /* libPods-FunctionDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0E37770A8116D5FA2E208C /* libPods-FunctionDemo.a */; };
+		D4026CD51D9B53FB0076E069 /* AllViewControllersTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4026CD41D9B53FB0076E069 /* AllViewControllersTool.m */; };
+		D4026CDA1D9B5A940076E069 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4026CD91D9B5A940076E069 /* LeftMenuViewController.m */; };
+		D4026CDD1D9B5AA50076E069 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4026CDC1D9B5AA50076E069 /* RightMenuViewController.m */; };
+		D4026CE01D9B60C60076E069 /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4026CDF1D9B60C60076E069 /* SideMenuTableViewCell.m */; };
+		D4026CE31D9B61F30076E069 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4026CE21D9B61F30076E069 /* UIColor+Extension.m */; };
 		D41A5BFE1D9A0A580062A5FF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A5BFD1D9A0A580062A5FF /* UIView+Frame.m */; };
 		D41A5C011D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A5C001D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m */; };
 		D4302A1D1D9126A800501060 /* IWPFTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D4302A1C1D9126A800501060 /* IWPFTestCase.m */; };
@@ -55,6 +60,16 @@
 		7699A4E1962E29167205B0F2 /* libPods-FunctionDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06495CABF4762827BC2DC1F /* Pods-FunctionDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoTests/Pods-FunctionDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		BF72D7E79B8912135AA8B17F /* Pods-FunctionDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoTests/Pods-FunctionDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4026CD31D9B53FB0076E069 /* AllViewControllersTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllViewControllersTool.h; path = Controller/AllViewControllersTool.h; sourceTree = "<group>"; };
+		D4026CD41D9B53FB0076E069 /* AllViewControllersTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllViewControllersTool.m; path = Controller/AllViewControllersTool.m; sourceTree = "<group>"; };
+		D4026CD81D9B5A940076E069 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = Controller/LeftMenuViewController.h; sourceTree = "<group>"; };
+		D4026CD91D9B5A940076E069 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = Controller/LeftMenuViewController.m; sourceTree = "<group>"; };
+		D4026CDB1D9B5AA50076E069 /* RightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightMenuViewController.h; path = Controller/RightMenuViewController.h; sourceTree = "<group>"; };
+		D4026CDC1D9B5AA50076E069 /* RightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightMenuViewController.m; path = Controller/RightMenuViewController.m; sourceTree = "<group>"; };
+		D4026CDE1D9B60C60076E069 /* SideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuTableViewCell.h; path = View/CellView/SideMenuTableViewCell.h; sourceTree = "<group>"; };
+		D4026CDF1D9B60C60076E069 /* SideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuTableViewCell.m; path = View/CellView/SideMenuTableViewCell.m; sourceTree = "<group>"; };
+		D4026CE11D9B61F30076E069 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extension.h"; path = "Model/Helper/category/UIColor+Extension.h"; sourceTree = "<group>"; };
+		D4026CE21D9B61F30076E069 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extension.m"; path = "Model/Helper/category/UIColor+Extension.m"; sourceTree = "<group>"; };
 		D41A5BFC1D9A0A580062A5FF /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "Model/Helper/category/UIView+Frame.h"; sourceTree = "<group>"; };
 		D41A5BFD1D9A0A580062A5FF /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "Model/Helper/category/UIView+Frame.m"; sourceTree = "<group>"; };
 		D41A5BFF1D9A0ABF0062A5FF /* UIBarButtonItem+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Helper.h"; path = "Model/Helper/category/UIBarButtonItem+Helper.h"; sourceTree = "<group>"; };
@@ -152,6 +167,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D4026CD21D9B53C00076E069 /* AllViewControllersTool */ = {
+			isa = PBXGroup;
+			children = (
+				D4026CD31D9B53FB0076E069 /* AllViewControllersTool.h */,
+				D4026CD41D9B53FB0076E069 /* AllViewControllersTool.m */,
+			);
+			name = AllViewControllersTool;
+			sourceTree = "<group>";
+		};
+		D4026CD61D9B5A490076E069 /* LeftMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D4026CD81D9B5A940076E069 /* LeftMenuViewController.h */,
+				D4026CD91D9B5A940076E069 /* LeftMenuViewController.m */,
+			);
+			name = LeftMenuViewController;
+			sourceTree = "<group>";
+		};
+		D4026CD71D9B5A5F0076E069 /* RightMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D4026CDB1D9B5AA50076E069 /* RightMenuViewController.h */,
+				D4026CDC1D9B5AA50076E069 /* RightMenuViewController.m */,
+			);
+			name = RightMenuViewController;
+			sourceTree = "<group>";
+		};
 		D41A5BFA1D9A08150062A5FF /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,10 +211,12 @@
 		D41A5BFB1D9A09A90062A5FF /* category */ = {
 			isa = PBXGroup;
 			children = (
-				D41A5BFC1D9A0A580062A5FF /* UIView+Frame.h */,
-				D41A5BFD1D9A0A580062A5FF /* UIView+Frame.m */,
 				D41A5BFF1D9A0ABF0062A5FF /* UIBarButtonItem+Helper.h */,
 				D41A5C001D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m */,
+				D4026CE11D9B61F30076E069 /* UIColor+Extension.h */,
+				D4026CE21D9B61F30076E069 /* UIColor+Extension.m */,
+				D41A5BFC1D9A0A580062A5FF /* UIView+Frame.h */,
+				D41A5BFD1D9A0A580062A5FF /* UIView+Frame.m */,
 			);
 			name = category;
 			sourceTree = "<group>";
@@ -180,6 +224,8 @@
 		D490E89D1D9A577900B7BCBA /* BasicViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D48809711D98EFF300B7344E /* IWPFBasicNavigationController.h */,
+				D48809721D98EFF300B7344E /* IWPFBasicNavigationController.m */,
 			);
 			name = BasicViewController;
 			sourceTree = "<group>";
@@ -267,14 +313,15 @@
 		D4A1969A1D90DB7A009B8D8B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D4026CD21D9B53C00076E069 /* AllViewControllersTool */,
+				D4026CD71D9B5A5F0076E069 /* RightMenuViewController */,
+				D4026CD61D9B5A490076E069 /* LeftMenuViewController */,
 				D490E89D1D9A577900B7BCBA /* BasicViewController */,
 				D4F152871D99192500754A94 /* LaunchViewController */,
 				D4A196A01D90DC00009B8D8B /* IWPFWeatherViewController.h */,
 				D4A196A11D90DC00009B8D8B /* IWPFWeatherViewController.m */,
 				D4E2D80E1D98BD3900047F48 /* IWPFAddSiteViewController.h */,
 				D4E2D80F1D98BD3900047F48 /* IWPFAddSiteViewController.m */,
-				D48809711D98EFF300B7344E /* IWPFBasicNavigationController.h */,
-				D48809721D98EFF300B7344E /* IWPFBasicNavigationController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -315,6 +362,8 @@
 				D4A617D81D92386F005394DE /* IWPFCurrentWeatherCell.m */,
 				D48207961D9254900095C076 /* IWPFCurrentWeatherView.h */,
 				D48207971D9254900095C076 /* IWPFCurrentWeatherView.m */,
+				D4026CDE1D9B60C60076E069 /* SideMenuTableViewCell.h */,
+				D4026CDF1D9B60C60076E069 /* SideMenuTableViewCell.m */,
 			);
 			name = CellView;
 			sourceTree = "<group>";
@@ -605,14 +654,19 @@
 				D4A617D91D92386F005394DE /* IWPFCurrentWeatherCell.m in Sources */,
 				D4F1528A1D99196F00754A94 /* IWPFLaunchViewController.m in Sources */,
 				D4A1965C1D90D1EC009B8D8B /* AppDelegate.m in Sources */,
+				D4026CDA1D9B5A940076E069 /* LeftMenuViewController.m in Sources */,
 				D4A196591D90D1EC009B8D8B /* main.m in Sources */,
 				D4E2D8101D98BD3900047F48 /* IWPFAddSiteViewController.m in Sources */,
+				D4026CE31D9B61F30076E069 /* UIColor+Extension.m in Sources */,
 				D48207981D9254900095C076 /* IWPFCurrentWeatherView.m in Sources */,
 				D4E2D80D1D98B3A300047F48 /* IWPFTools.m in Sources */,
+				D4026CDD1D9B5AA50076E069 /* RightMenuViewController.m in Sources */,
 				D4A196A61D90E577009B8D8B /* CommunicationHelper.m in Sources */,
 				D4A196A21D90DC00009B8D8B /* IWPFWeatherViewController.m in Sources */,
 				D48809731D98EFF300B7344E /* IWPFBasicNavigationController.m in Sources */,
 				D41A5BFE1D9A0A580062A5FF /* UIView+Frame.m in Sources */,
+				D4026CD51D9B53FB0076E069 /* AllViewControllersTool.m in Sources */,
+				D4026CE01D9B60C60076E069 /* SideMenuTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

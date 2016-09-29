@@ -28,7 +28,6 @@
 - (void)loadView
 {
     [super loadView];
-    IWPFLog(@"WeatherView LoadView");
 }
 
 - (void)viewWillAppear:(BOOL)animated

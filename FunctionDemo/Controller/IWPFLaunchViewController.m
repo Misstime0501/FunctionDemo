@@ -6,13 +6,13 @@
 //  Copyright © 2016年 Chen Li. All rights reserved.
 //
 
+#import "AllViewControllersTool.h"
 #import "CommunicationHelper.h"
 #import "IWPFLaunchViewController.h"
 #import "IWPFTools.h"
 #import "SVProgressHUD.h"
 #import "MacroOfDefine.h"
 #import "Masonry.h"
-
 
 @interface IWPFLaunchViewController ()
 
@@ -30,25 +30,23 @@
     [self.view addSubview:self.launchBackgroundImageView];
     [self.view addSubview:self.markImageView];
     
-    // 自动约束方法
-    __weak typeof (self) vc = self;
-    [_markImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        // 约束宽高
-        CGFloat width       = vc.view.bounds.size.width * 0.5;
-        CGFloat height      = width * 0.4;
-        make.size.mas_equalTo(CGSizeMake(width, height));
-        // 约束相对坐标
-        CGFloat viewHeight  = vc.view.bounds.size.height / 4;
-        make.centerX.equalTo(vc.view.mas_centerX);
-        make.centerY.mas_equalTo(vc.view.mas_centerY).offset(-viewHeight);
-    }];
-    
-    [self loadLaunchImageView];
-    
-    [self getNewImage];
+//    // 自动约束方法
+//    __weak typeof (self) vc = self;
+//    [_markImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        // 约束宽高
+//        CGFloat width       = vc.view.bounds.size.width * 0.5;
+//        CGFloat height      = width * 0.4;
+//        make.size.mas_equalTo(CGSizeMake(width, height));
+//        // 约束相对坐标
+//        CGFloat viewHeight  = vc.view.bounds.size.height / 4;
+//        make.centerX.equalTo(vc.view.mas_centerX);
+//        make.centerY.mas_equalTo(vc.view.mas_centerY).offset(-viewHeight);
+//    }];
+//    
+//    [self loadLaunchImageView];
+//    
+//    [self getNewImage];
 }
-
-
 
 
 - (void)viewWillAppear:(BOOL)animated
@@ -63,25 +61,10 @@
                          _launchBackgroundImageView.frame = rect;
                                 }
                      completion:^(BOOL finished) {
-                        
+                         [AllViewControllersTool createViewControllerWithIndex:0];
                                 }
     ];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #pragma mark - 网络获取 launchImage
 
@@ -99,8 +82,8 @@
     [CommunicationHelper requestMethUsePostWithPath:HTTPS_LAUCH_SCREEN_IMAGE
                                              params:nil
                                             success:^(id responseObject) {
-                                                        NSString *imageURL = [[responseObject objectForKey:@"data"] objectForKey:@"picurl"];
-                                                        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
+                                                        NSString *imageURL  = [[responseObject objectForKey:@"data"] objectForKey:@"picurl"];
+                                                        NSData *imageData   = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageURL]];
                                                         [IWPFTools writeUserDefaults:LAUNCH_IMAGEVIEW_NAME value:imageData];
                                                     }
                                             failure:^(NSError *error) {
