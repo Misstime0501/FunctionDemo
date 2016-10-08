@@ -7,6 +7,11 @@
 //
 
 #import "IWPFWeatherViewController.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIBarButtonItem+Helper.h"
+#import "UIViewController+MMDrawerController.h"
+
+
 
 @implementation IWPFWeatherViewController
 
@@ -15,12 +20,42 @@
 
 
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // view controller 设置
+    [self viewConfigure];
+//    // table view 设置
+    [self tableViewConfigure];
+    // 导航栏设置
+    [self navigationConfigure];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (instancetype)init
 {
     self = [super init];
     if  (self)
     {
-        IWPFLog(@"WeatherView Init");
     }
     return self;
 }
@@ -37,18 +72,11 @@
     
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self viewConfigure];
-    [self navigationConfigure];
-    [self tableViewConfigure];
-    
-}
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.tableView.delegate = nil;
     
 }
 
@@ -56,14 +84,12 @@
 
 - (void)addSiteViewController:(id)sender
 {
-    //    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionRight
-    //                                                         withOffset:ScreenWidth / 4
-    //                                                           animated:YES];
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)showMoreInformationViewController:(id)sender
 {
-    
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 
 
@@ -162,9 +188,7 @@
         
         _tableView.bounces = YES;
         _tableView.tableFooterView = [[UIView alloc] init];
-        //        _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        _tableView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.1];
-        
+        _tableView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6];
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -174,15 +198,18 @@
 
 - (void)navigationConfigure
 {
-    self.navigationItem.title = @"天气";
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"北土城西路" style:UIBarButtonItemStylePlain target:self action:@selector(addSiteViewController:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"更多" style:UIBarButtonItemStylePlain target:self action:@selector(showMoreInformationViewController:)];
+    self.navigationItem.title                   = @"天气";
     
-    //    self.navigationController.navigationBar.translucent = YES;
-    //    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    NSString *localtion                         = [[NSString alloc] initWithFormat:@"北土城西路"];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor clearColor]];
+    MMDrawerBarButtonItem *leftBarButtonItem    = [MMDrawerBarButtonItem itemWithTitle:localtion backgroundImage:nil normalColor:[UIColor whiteColor] highlightedColor:[UIColor redColor] target:self action:@selector(addSiteViewController:)];
+    MMDrawerBarButtonItem *rightBarButtonItem   = [MMDrawerBarButtonItem itemWithTitle:@"更多" backgroundImage:nil normalColor:[UIColor whiteColor] highlightedColor:[UIColor redColor] target:self action:@selector(showMoreInformationViewController:)];
+    
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+
+    self.navigationController.navigationBar.translucent = YES;
     
 }
 

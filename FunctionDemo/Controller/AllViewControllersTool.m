@@ -14,9 +14,11 @@
 #import "MMDrawerController.h"
 #import "MMDrawerVisualState.h"
 
+
 @interface AllViewControllersTool ()
 
 @property (nonatomic, strong) MMDrawerController        *drawerController;
+
 @property (nonatomic, strong) LeftMenuViewController    *leftMenuController;
 @property (nonatomic, strong) RightMenuViewController   *rightMenuController;
 
@@ -45,20 +47,24 @@
     if (!_drawerController) {
         _drawerController = [[MMDrawerController alloc] init];
         _drawerController.showsShadow = YES;
-        [_drawerController setMaximumLeftDrawerWidth:[UIScreen mainScreen].bounds.size.width * 0.75];
+        
+        
+        [_drawerController setMaximumLeftDrawerWidth:SCREEN_WIDTH * 0.75];
+        
+        [_drawerController setMaximumRightDrawerWidth:SCREEN_WIDTH * 0.75];
+        
         [_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
         [_drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
         
         [_drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
-            
             MMDrawerControllerDrawerVisualStateBlock block = [MMDrawerVisualState slideVisualStateBlock];
             if (block) {
                 block(drawerController,drawerSide,percentVisible);
             }
         }];
         
-        [_drawerController setLeftDrawerViewController:_leftMenuController];
-        [_drawerController setRightDrawerViewController:_rightMenuController];
+        [_drawerController setLeftDrawerViewController:self.leftMenuController];
+        [_drawerController setRightDrawerViewController:self.rightMenuController];
     }
     return _drawerController;
 }
@@ -98,7 +104,6 @@
             [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
             
             [self.drawerController closeDrawerAnimated:YES completion:nil];
-            
         }
             break;
             

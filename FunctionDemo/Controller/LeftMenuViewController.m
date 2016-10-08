@@ -65,15 +65,17 @@
 {
     [super viewDidLoad];
     
-    _tableView.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    _titleArray = LEFT_MENU_TITLE_ARRAY;
-    _cellImage  = LEFT_MENU_CELL_IMAGE_ARRAY;
-    
-    [self.view addSubview:_tableView];
-    
-    [self setupConstrain];
-    
+//    _tableView.backgroundColor = [UIColor lightGrayColor];
+//    
+//    _titleArray = LEFT_MENU_TITLE_ARRAY;
+//    _cellImage  = LEFT_MENU_CELL_IMAGE_ARRAY;
+//    
+//    [self.view addSubview:_tableView];
+//    
+//    [self setupConstrain];
+//    
 }
 
 
