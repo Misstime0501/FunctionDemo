@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, LHTDScrollViewCellType){
 };
 
 static const CGFloat kNumberOfSections                  = 1.0;
-static const CGFloat kRowsInSection                     = 50.0;
+static const CGFloat kRowsInSection                     = 4.0;
 
 // TODO: 此处要判断机型,从而改变尺寸
 static const CGFloat kCellTypeCurrentWeatherHeight      = 568.0;

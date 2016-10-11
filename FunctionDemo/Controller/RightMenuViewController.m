@@ -8,12 +8,15 @@
 
 #import "AllViewControllersTool.h"
 #import "MacroOfDefine.h"
+#import "Masonry.h"
 #import "RightMenuViewController.h"
 #import "SideMenuTableViewCell.h"
 
 @interface RightMenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIView      *headView;
+
 @property (nonatomic, strong) NSArray     *titleArray;
 
 @property (nonatomic, strong) NSArray     *cellImage;
@@ -30,12 +33,25 @@
         _tableView.delegate         = self;
         _tableView.dataSource       = self;
         _tableView.separatorStyle   = UITableViewCellSeparatorStyleNone;
+        _tableView.scrollEnabled    = NO;
+        
+        _tableView.backgroundColor  = [UIColor whiteColor];
         
         NSIndexPath *indexpath      = [NSIndexPath indexPathForRow:ZERO inSection:ZERO];
         
         [_tableView selectRowAtIndexPath:indexpath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
     return _tableView;
+}
+
+- (UIView *)headView
+{
+    if (_headView == nil)
+    {
+        _headView                   = [[UIView alloc] init];
+        _headView.backgroundColor   = [UIColor whiteColor];
+    }
+    return _headView;
 }
 
 - (NSArray *)titleArray
@@ -60,7 +76,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
+    
+    self.titleArray = LEFT_MENU_TITLE_ARRAY;
+    self.cellImage  = LEFT_MENU_CELL_IMAGE_ARRAY;
+    
+    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.headView];
+    [self setupConstrain];
 }
 
 
@@ -111,6 +136,29 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return LEFT_MENU_CELL_HEIGHT;
+}
+
+
+
+- (void)setupConstrain
+{
+    __weak typeof(self)vc = self;
+    
+    [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
+
+        make.top.equalTo(vc.view.mas_top);
+        make.left.equalTo(vc.view.mas_left);
+        make.right.equalTo(vc.view.mas_right);
+        make.height.mas_equalTo(SCREEN_HEIGHT * 0.3);
+    }];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(vc.headView.mas_bottom);
+        make.left.equalTo(vc.view.mas_left);
+        make.right.equalTo(vc.view.mas_right);
+        make.bottom.mas_equalTo(SCREEN_HEIGHT - LEFT_MENU_CELL_HEIGHT);
+    }];
 }
 
 @end

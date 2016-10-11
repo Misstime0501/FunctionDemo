@@ -15,16 +15,42 @@
 #define VIEW_WIDTH           self.view.frame.size.width
 #define VIEW_HEIGHT          self.view.frame.size.height
 
-@interface LeftMenuViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface LeftMenuViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+
+@property (nonatomic, strong) UISearchBar *addressSearchBar;
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray     *titleArray;
 
 @property (nonatomic, strong) NSArray     *cellImage;
 
+
+
+
 @end
 
 @implementation LeftMenuViewController
+
+- (UISearchBar *)addressSearchBar
+{
+    if (_addressSearchBar == nil)
+    {
+        _addressSearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(ZERO, ZERO, SCREEN_WIDTH * 0.75, SCREEN_HEIGHT * 0.1)];
+        _addressSearchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+        _addressSearchBar.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
+        _addressSearchBar.keyboardType = UIKeyboardTypeDefault;
+        _addressSearchBar.backgroundColor = [UIColor redColor];
+        _addressSearchBar.showsScopeBar = YES;
+        _addressSearchBar.showsCancelButton = YES;
+        _addressSearchBar.delegate = self;
+        _addressSearchBar.placeholder = @"查询地点";
+        _addressSearchBar.translucent = YES;
+        _addressSearchBar.barStyle = UIBarStyleDefault;
+    }
+    return _addressSearchBar;
+}
+
+
 
 - (UITableView *)tableView
 {
@@ -36,6 +62,8 @@
         _tableView.separatorStyle   = UITableViewCellSeparatorStyleNone;
         
         NSIndexPath *indexpath      = [NSIndexPath indexPathForRow:ZERO inSection:ZERO];
+        
+        _tableView.tableHeaderView  = self.addressSearchBar;
         
         [_tableView selectRowAtIndexPath:indexpath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
@@ -67,15 +95,13 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    _tableView.backgroundColor = [UIColor lightGrayColor];
-//    
-//    _titleArray = LEFT_MENU_TITLE_ARRAY;
-//    _cellImage  = LEFT_MENU_CELL_IMAGE_ARRAY;
-//    
-//    [self.view addSubview:_tableView];
-//    
-//    [self setupConstrain];
-//    
+    self.titleArray = LEFT_MENU_TITLE_ARRAY;
+    self.cellImage  = LEFT_MENU_CELL_IMAGE_ARRAY;
+    
+    [self.view addSubview:self.addressSearchBar];
+    [self.view addSubview:self.tableView];
+    
+    [self setupConstrain];
 }
 
 
@@ -135,29 +161,81 @@
 {
     __weak typeof(self)vc = self;
     
-//    [self.headView mas_makeConstraints:^(MASConstraintMaker *make) {
+//    [self.addressSearchBar mas_makeConstraints:^(MASConstraintMaker *make) {
 //        
 //        make.top.equalTo(vc.view.mas_top);
 //        make.left.equalTo(vc.view.mas_left);
 //        make.right.equalTo(vc.view.mas_right);
-//        make.height.mas_equalTo(VIEW_HEIGHT * 0.3);
+//        make.height.mas_equalTo(SCREEN_HEIGHT * 0.1);
 //    }];
     
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(vc.view.mas_top);
         make.left.equalTo(vc.view.mas_left);
         make.right.equalTo(vc.view.mas_right);
         make.bottom.equalTo(vc.view.mas_bottom);
     }];
-    
-//    [self.playMusicView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        
-//        make.left.equalTo(vc.view.mas_left);
-//        make.right.equalTo(vc.view.mas_right);
-//        make.bottom.equalTo(vc.view.mas_bottom);
-//        make.height.mas_equalTo(VIEWHEIGHT * 0.1);
-//    }];
 }
+
+
+
+#pragma mark - 搜索栏的代理方法
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    
+
+}
+
+#pragma mark - searchBardelegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    // 成为第一事件响应者 , 返回 NO 的话取消第一响应事件
+    return YES;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(nonnull NSString *)searchText
+{
+    
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"开始在文本框里进行编辑");
+}
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"触摸输入框之外");
+    return YES;
+}// return NO to not resign first responder
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"当文本编辑结束");
+}// called when text ends editing
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    if (searchBar.text.length > 0)
+    {
+        
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    if (searchBar.text.length > 0)
+    {
+        
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+
 
 @end

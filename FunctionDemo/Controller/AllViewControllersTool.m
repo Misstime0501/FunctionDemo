@@ -46,15 +46,17 @@
 {
     if (!_drawerController) {
         _drawerController = [[MMDrawerController alloc] init];
-        _drawerController.showsShadow = YES;
-        
+        // 是否展示阴影
+        _drawerController.showsShadow = NO;
         
         [_drawerController setMaximumLeftDrawerWidth:SCREEN_WIDTH * 0.75];
-        
         [_drawerController setMaximumRightDrawerWidth:SCREEN_WIDTH * 0.75];
         
         [_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
         [_drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+        
+        // 不允许拖动
+        _drawerController.closeDrawerGestureModeMask ^= MMCloseDrawerGestureModePanningDrawerView;
         
         [_drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
             MMDrawerControllerDrawerVisualStateBlock block = [MMDrawerVisualState slideVisualStateBlock];

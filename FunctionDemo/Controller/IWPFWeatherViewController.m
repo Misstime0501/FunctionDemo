@@ -77,6 +77,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+//    self.tableView.delegate = nil;
     
 }
 
@@ -116,11 +117,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //    static NSString *CellIdentifier = @"Cell";
-    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    //
-    //    return cell;
-    
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -129,13 +125,32 @@
     }
     cell.textLabel.text = [NSString stringWithFormat:@"Main %ld", (long)indexPath.row];
     cell.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.1];
+    
+    cell.selectionStyle = NO;
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    switch (indexPath.row)
+    {
+        case 0:
+            return kCellTypeCurrentWeatherHeight;
+            break;
+        case 1:
+            return kCellTypeTomorrowWeatherHeight;
+            break;
+        case 2:
+            return kCellTypeForecastWeatherHeight;
+            break;
+        case 3:
+            return kCellTypeWeatherMapHeight;
+            break;
+        default:
+            return 65;
+            break;
+    }
 }
 
 
@@ -171,7 +186,7 @@
 
 - (void)viewConfigure
 {
-    self.view.backgroundColor = [UIColor brownColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)tableViewConfigure
@@ -188,7 +203,7 @@
         
         _tableView.bounces = YES;
         _tableView.tableFooterView = [[UIView alloc] init];
-        _tableView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6];
+        _tableView.backgroundColor = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6];
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
