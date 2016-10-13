@@ -41,14 +41,6 @@
     return [IWPFTools safeString:areaID];
 }
 
-
-
-
-
-
-
-
-
 // 1001002       实况
 + (NSString *)observeInformationFromFetchNumber:(NSNumber *)fetchNumber
 {
@@ -253,7 +245,6 @@
     return @"";
 }
 
-
 // 1001004       24 生活指数
 + (NSString *)moreThanTwelveHoursIndexInformationFromFetchNumber:(NSNumber *)fetchNumber
 {
@@ -297,8 +288,6 @@
     }
     return @"";
 }
-
-
 
 // 1001004       24 生活指数
 + (NSString *)weatherPhenomenaInformationFromFetchNumber:(NSNumber *)fetchNumber
@@ -440,10 +429,181 @@
     return @"";
 }
 
+// 风力
++ (NSString *)windPowerInformationFromFetchNumber:(NSNumber *)fetchNumber
+{
+    switch (fetchNumber.integerValue)
+    {
+        case 0:
+            // 微风            < 5.4 m/s
+            break;
+        case 1:
+            // 3 - 4 级       5.5 ~ 7.9 m/s
+            break;
+        case 2:
+            // 4 - 5 级       8.0 ~ 10.7 m/s
+            break;
+        case 3:
+            // 5 - 6 级       10.8 ~ 13.8 m/s
+            break;
+        case 4:
+            // 6 - 7 级       13.9 ~ 17.1 m/s
+            break;
+        case 5:
+            // 7 - 8 级       17.2 ~ 20.7 m/s
+            break;
+        case 6:
+            // 8 - 9 级       20.8 ~ 24.4 m/s
+            break;
+        case 7:
+            // 9 - 10 级      24.5 ~ 28.4 m/s
+            break;
+        case 8:
+            // 10 - 11 级     28.5 ~ 32.6 m/s
+            break;
+        case 9:
+            // 11 - 12 级     32.7 ~ 36.9 m/s
+            break;
+        default:
+            break;
+    }
+    return @"";
+}
 
+// 风向
++ (NSString *)windDirectionInformationFromFetchNumber:(NSNumber *)fetchNumber
+{
+    switch (fetchNumber.integerValue)
+    {
+        case 0:
+            // 无持续风向       No wind
+            break;
+        case 1:
+            // 东北风          Northeast
+            break;
+        case 2:
+            // 东风            East
+            break;
+        case 3:
+            // 东南风           Southeast
+            break;
+        case 4:
+            // 南风            South
+            break;
+        case 5:
+            // 西南风           Southwest
+            break;
+        case 6:
+            // 西风            West
+            break;
+        case 7:
+            // 西北风           Northwest
+            break;
+        case 8:
+            // 北风             North
+            break;
+        case 9:
+            // 旋转风           whirl wind
+            break;
+        default:
+            break;
+    }
+    return @"";
+}
 
+// 预警信号
++ (NSString *)alarmNumberInformationFromFetchNumber:(NSNumber *)fetchNumber
+{
+    switch (fetchNumber.integerValue)
+    {
+        case 1:
+            // 台风
+            break;
+        case 2:
+            // 暴雨
+            break;
+        case 3:
+            // 暴雪
+            break;
+        case 4:
+            // 寒潮
+            break;
+        case 5:
+            // 大风
+            break;
+        case 6:
+            // 沙尘暴
+            break;
+        case 7:
+            // 高温
+            break;
+        case 8:
+            // 干旱
+            break;
+        case 9:
+            // 雷电
+            break;
+        case 10:
+            // 冰雹
+            break;
+        case 11:
+            // 霜冻
+            break;
+        case 12:
+            // 大雾
+            break;
+        case 13:
+            // 霾
+            break;
+        case 14:
+            // 道路结冰
+            break;
+        case 0:
+            // 寒冷
+            // 灰霾
+            // 雷雨大风
+            // 森林火险
+            // 降温
+            // 道路冰雪
+            // 干热风
+            // 低温
+            // 冰冻
+            /**
+             对于编号为00的预警类别都是非常规的预警，
+             由于没有标准的图标所以将这些预警都编为00，
+             如果用户不需要显示图标，
+             那么建议读数据里的w5和w7项，
+             w4和w6只用于显示图标。
+             */
+            break;
+        default:
+            break;
+    }
+    return @"";
+}
 
-
+// 预警信号
++ (NSString *)alarmLevelInformationFromFetchNumber:(NSNumber *)fetchNumber
+{
+    switch (fetchNumber.integerValue)
+    {
+        case 1:
+            // 蓝色
+            break;
+        case 2:
+            // 黄色
+            break;
+        case 3:
+            // 橙色
+            break;
+        case 4:
+            // 红色
+            break;
+        default:
+            break;
+    }
+    return @"";
+}
 
 
 @end
