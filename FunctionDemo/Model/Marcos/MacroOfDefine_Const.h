@@ -67,6 +67,48 @@
 
 #pragma mark - 请求地址
 
+// 可查询天气信息的地理数组
+#define WEATHER_AREA_ARRAY                                          @[ @{@"AREAID" : @"101010100" , @"NAMECN" : @"北京"}, \
+                                                                       @{@"AREAID" : @"101020100" , @"NAMECN" : @"上海"}, \
+                                                                       @{@"AREAID" : @"101280101" , @"NAMECN" : @"广州"}, \
+                                                                       @{@"AREAID" : @"101280601" , @"NAMECN" : @"深圳"} ]
+
+// 中国天气数据及时 国内数据请求秘钥 : 5bfcd7ed67b7c3cbe7f666967378dd18
+// 由于会变更 , 目前单拿出来
+#define WEATHER_RQ_PRIVATE_KEY                                      @"5bfcd7ed67b7c3cbe7f666967378dd18"
+
+#define WEATHER_RQ_CONNECTOR                                        @"&"
+
+#define WEATHER_RQ_PATH                                             @"http://api.weatherdt.com/common/?"
+#define WEATHER_RQ_AREA                                             @"area="
+#define WEATHER_RQ_TYPE                                             @"type="
+#define WEATHER_RQ_KEY                                              @"key="
+
+
+
+// 查询类型
+#define WEATHER_TYPE_ARRAY                                          @[ @"forecast" , @"observe" , @"alarm" , @"index" , @"air"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #define BASE_URL_STRING                                             @"http://"

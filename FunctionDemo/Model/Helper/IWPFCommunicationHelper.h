@@ -14,14 +14,14 @@
 #import "IWPFBlockTypeHelper.h"
 
 
-@interface CommunicationClient : AFHTTPSessionManager
+@interface IWPFCommunicationClient : AFHTTPSessionManager
 
 + (instancetype)sharedCommunicationClient;
 
 @end
 
 
-@interface CommunicationHelper : NSObject
+@interface IWPFCommunicationHelper : NSObject
 
 
 + (void)requestMethUseGetWithPath:(NSString *)path

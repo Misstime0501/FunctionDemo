@@ -11,6 +11,8 @@
 #import "UIBarButtonItem+Helper.h"
 #import "UIViewController+MMDrawerController.h"
 
+#import "IWPFCurrentWeatherCell.h"
+
 
 
 @implementation IWPFWeatherViewController
@@ -77,8 +79,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-//    self.tableView.delegate = nil;
-    
 }
 
 #pragma mark - PPRevealSideViewController
@@ -117,17 +117,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    switch (indexPath.row)
+    {
+        case IWPFScrollViewCellTypeCurrentWeather:
+        {
+            IWPFCurrentWeatherCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellTypeCurrentWeatherIdentifier];
+            if (!cell)
+            {
+                cell = [[IWPFCurrentWeatherCell alloc] initWithInformation:[self informationDictionary]
+                                                                     frame:CGRectMake(ZERO, ZERO, SCREEN_WIDTH, kCellTypeCurrentWeatherHeight)];
+            }
+            cell.weatherInformation = [self informationDictionary];
+            cell.selectionStyle = NO;
+            return cell;
+        }
+            break;
+        case IWPFScrollViewCellTypeTomorrowWeather:
+        case IWPFScrollViewCellTypeForecastWeather:
+        case IWPFScrollViewCellTypeWeatherMap:
+        default:
+        {
+            static NSString *CellIdentifier = @"Cell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            if (!cell) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            cell.textLabel.text = [NSString stringWithFormat:@"Main %ld", (long)indexPath.row];
+            cell.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.1];
+            
+            cell.selectionStyle = NO;
+            return cell;
+            break;
+        }
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"Main %ld", (long)indexPath.row];
-    cell.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.1];
-    
-    cell.selectionStyle = NO;
-    return cell;
 }
 
 
@@ -135,20 +158,20 @@
 {
     switch (indexPath.row)
     {
-        case 0:
+        case IWPFScrollViewCellTypeCurrentWeather:
             return kCellTypeCurrentWeatherHeight;
             break;
-        case 1:
+        case IWPFScrollViewCellTypeTomorrowWeather:
             return kCellTypeTomorrowWeatherHeight;
             break;
-        case 2:
+        case IWPFScrollViewCellTypeForecastWeather:
             return kCellTypeForecastWeatherHeight;
             break;
-        case 3:
+        case IWPFScrollViewCellTypeWeatherMap:
             return kCellTypeWeatherMapHeight;
             break;
         default:
-            return 65;
+            return kCellTypeDefaultHeight;
             break;
     }
 }
@@ -191,7 +214,6 @@
 
 - (void)tableViewConfigure
 {
-    
     [self.view addSubview:self.itemTableView];
 }
 
@@ -206,6 +228,7 @@
         _tableView.backgroundColor = [UIColor clearColor];//[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.6];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.showsVerticalScrollIndicator = NO;
     }
     return _tableView;
 }
@@ -225,9 +248,23 @@
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 
     self.navigationController.navigationBar.translucent = YES;
-    
 }
 
+
+
+- (NSMutableDictionary *)informationDictionary
+{
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    
+    [dictionary setValue:@"27°" forKey:@"CurrentWeather"];
+    [dictionary setValue:@"46%" forKey:@"CurrentHumidity"];
+    [dictionary setValue:@"1" forKey:@"CurrentWind"];
+    [dictionary setValue:@"东南" forKey:@"CurrentWindDirection"];
+    [dictionary setValue:@"700 hpa" forKey:@"CurrentAtmosphericPressure"];
+    [dictionary setValue:@"112" forKey:@"CurrentPollution"];
+    
+    return dictionary;
+}
 
 
 @end

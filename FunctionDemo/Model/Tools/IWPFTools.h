@@ -55,4 +55,13 @@
  */
 + (NSData *)useJsonChangeDictionaryToData:(NSDictionary *)dictionary;
 
+
+
++ (NSString *)safeString:(NSString *)checkString;
+
+
+//获取当前时间
+//format: @"yyyy-MM-dd HH:mm:ss"、@"yyyy年MM月dd日 HH时mm分ss秒"
++ (NSString *)currentDateWithFormat:(NSString *)format;
+
 @end

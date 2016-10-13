@@ -7,17 +7,17 @@
 //
 
 #import "AFNetworking.h"
-#import "CommunicationHelper.h"
+#import "IWPFCommunicationHelper.h"
 
-@implementation CommunicationClient
+@implementation IWPFCommunicationClient
 
 + (instancetype)sharedCommunicationClient
 {
-    static CommunicationClient *_sharedCommunicationClient = nil;
+    static IWPFCommunicationClient *_sharedCommunicationClient = nil;
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _sharedCommunicationClient = [[CommunicationClient alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL_STRING]];
+        _sharedCommunicationClient = [[IWPFCommunicationClient alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL_STRING]];
         _sharedCommunicationClient.responseSerializer = [AFJSONResponseSerializer serializer];
         
         _sharedCommunicationClient.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",
@@ -35,7 +35,7 @@
 
 @end
 
-@implementation CommunicationHelper
+@implementation IWPFCommunicationHelper
 
 #pragma mark - AFN网络请求
 #pragma mark POST请求
@@ -44,7 +44,7 @@
                            success:(IWPFRequestSuccessBlock)success
                            failure:(IWPFRequestFailureBlock)failure
 {
-    CommunicationClient *manager = [CommunicationClient sharedCommunicationClient];
+    IWPFCommunicationClient *manager = [IWPFCommunicationClient sharedCommunicationClient];
     
     [manager POST:path
        parameters:params
@@ -68,7 +68,7 @@
                           success:(IWPFRequestSuccessBlock)success
                           failure:(IWPFRequestFailureBlock)failure {
     
-    CommunicationClient *manager = [CommunicationClient sharedCommunicationClient];
+    IWPFCommunicationClient *manager = [IWPFCommunicationClient sharedCommunicationClient];
     
     [manager GET:path
       parameters:params
@@ -79,7 +79,8 @@
                     success(responseObject);
                 }
          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                    if (failure == nil) return;
+                    if (failure == nil)
+                        return;
                     failure(error);
                 }
     ];

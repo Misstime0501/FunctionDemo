@@ -49,6 +49,16 @@
     return NO;
 }
 
+
++ (NSString *)safeString:(NSString *)checkString
+{
+    if (![IWPFTools checkStringEqualNull:checkString])
+    {
+        return checkString;
+    }
+    return EMPTY_STR;
+}
+
 + (NSData *)useJsonChangeDictionaryToData:(NSDictionary *)dictionary
 {
     NSError *error;
@@ -58,8 +68,25 @@
     return data;
 }
 
++ (NSString *)currentDateWithFormat:(NSString *)format
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    return [dateFormatter stringFromDate:[NSDate date]];
+}
 
-
++ (BOOL)isHaveString:(NSString *)string1 InString:(NSString *)string2
+{
+    NSRange range = [string2 rangeOfString:string1];
+    if (range.location != NSNotFound)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
 
 
 

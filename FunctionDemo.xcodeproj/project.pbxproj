@@ -17,9 +17,9 @@
 		D4026CE31D9B61F30076E069 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D4026CE21D9B61F30076E069 /* UIColor+Extension.m */; };
 		D41A5BFE1D9A0A580062A5FF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A5BFD1D9A0A580062A5FF /* UIView+Frame.m */; };
 		D41A5C011D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = D41A5C001D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m */; };
+		D425EF491DACE2DD007C12EE /* IWPFForecastWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D425EF481DACE2DD007C12EE /* IWPFForecastWeatherCell.m */; };
+		D425EF4C1DACE340007C12EE /* IWPFWeatherMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D425EF4B1DACE340007C12EE /* IWPFWeatherMapCell.m */; };
 		D4302A1D1D9126A800501060 /* IWPFTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D4302A1C1D9126A800501060 /* IWPFTestCase.m */; };
-		D4302A1F1D91284C00501060 /* IWPFCommunicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4302A1E1D91284C00501060 /* IWPFCommunicationHelper.m */; };
-		D48207981D9254900095C076 /* IWPFCurrentWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = D48207971D9254900095C076 /* IWPFCurrentWeatherView.m */; };
 		D48809731D98EFF300B7344E /* IWPFBasicNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48809721D98EFF300B7344E /* IWPFBasicNavigationController.m */; };
 		D4A196591D90D1EC009B8D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196581D90D1EC009B8D8B /* main.m */; };
 		D4A1965C1D90D1EC009B8D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A1965B1D90D1EC009B8D8B /* AppDelegate.m */; };
@@ -29,9 +29,11 @@
 		D4A196721D90D1EC009B8D8B /* FunctionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196711D90D1EC009B8D8B /* FunctionDemoTests.m */; };
 		D4A1967D1D90D1EC009B8D8B /* FunctionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A1967C1D90D1EC009B8D8B /* FunctionDemoUITests.m */; };
 		D4A196A21D90DC00009B8D8B /* IWPFWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196A11D90DC00009B8D8B /* IWPFWeatherViewController.m */; };
-		D4A196A61D90E577009B8D8B /* CommunicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196A51D90E577009B8D8B /* CommunicationHelper.m */; };
+		D4A196A61D90E577009B8D8B /* IWPFCommunicationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196A51D90E577009B8D8B /* IWPFCommunicationHelper.m */; };
 		D4A617D91D92386F005394DE /* IWPFCurrentWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A617D81D92386F005394DE /* IWPFCurrentWeatherCell.m */; };
+		D4A9CB291DAE2C2E0051E469 /* IWPFWeatherTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9CB281DAE2C2E0051E469 /* IWPFWeatherTransform.m */; };
 		D4E2D80D1D98B3A300047F48 /* IWPFTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E2D80C1D98B3A300047F48 /* IWPFTools.m */; };
+		D4F0EF0D1DADE17200A59363 /* IWPFWeatherDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */; };
 		D4F1528A1D99196F00754A94 /* IWPFLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F152891D99196F00754A94 /* IWPFLaunchViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -73,12 +75,13 @@
 		D41A5BFD1D9A0A580062A5FF /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "Model/Helper/category/UIView+Frame.m"; sourceTree = "<group>"; };
 		D41A5BFF1D9A0ABF0062A5FF /* UIBarButtonItem+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+Helper.h"; path = "Model/Helper/category/UIBarButtonItem+Helper.h"; sourceTree = "<group>"; };
 		D41A5C001D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+Helper.m"; path = "Model/Helper/category/UIBarButtonItem+Helper.m"; sourceTree = "<group>"; };
+		D425EF471DACE2DD007C12EE /* IWPFForecastWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFForecastWeatherCell.h; path = View/CellView/IWPFForecastWeatherCell.h; sourceTree = "<group>"; };
+		D425EF481DACE2DD007C12EE /* IWPFForecastWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFForecastWeatherCell.m; path = View/CellView/IWPFForecastWeatherCell.m; sourceTree = "<group>"; };
+		D425EF4A1DACE340007C12EE /* IWPFWeatherMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFWeatherMapCell.h; path = View/CellView/IWPFWeatherMapCell.h; sourceTree = "<group>"; };
+		D425EF4B1DACE340007C12EE /* IWPFWeatherMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherMapCell.m; path = View/CellView/IWPFWeatherMapCell.m; sourceTree = "<group>"; };
 		D4302A1A1D9115C900501060 /* IWPFBlockTypeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWPFBlockTypeHelper.h; sourceTree = "<group>"; };
 		D4302A1B1D9126A800501060 /* IWPFTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPFTestCase.h; sourceTree = "<group>"; };
 		D4302A1C1D9126A800501060 /* IWPFTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPFTestCase.m; sourceTree = "<group>"; };
-		D4302A1E1D91284C00501060 /* IWPFCommunicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPFCommunicationHelper.m; sourceTree = "<group>"; };
-		D48207961D9254900095C076 /* IWPFCurrentWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFCurrentWeatherView.h; path = View/View/IWPFCurrentWeatherView.h; sourceTree = "<group>"; };
-		D48207971D9254900095C076 /* IWPFCurrentWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFCurrentWeatherView.m; path = View/View/IWPFCurrentWeatherView.m; sourceTree = "<group>"; };
 		D48809711D98EFF300B7344E /* IWPFBasicNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFBasicNavigationController.h; path = Controller/IWPFBasicNavigationController.h; sourceTree = "<group>"; };
 		D48809721D98EFF300B7344E /* IWPFBasicNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFBasicNavigationController.m; path = Controller/IWPFBasicNavigationController.m; sourceTree = "<group>"; };
 		D4A196541D90D1EC009B8D8B /* FunctionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,12 +103,16 @@
 		D4A1969F1D90DBD3009B8D8B /* MacroOfDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroOfDefine.h; path = Model/Marcos/MacroOfDefine.h; sourceTree = "<group>"; };
 		D4A196A01D90DC00009B8D8B /* IWPFWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFWeatherViewController.h; path = Controller/IWPFWeatherViewController.h; sourceTree = "<group>"; };
 		D4A196A11D90DC00009B8D8B /* IWPFWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherViewController.m; path = Controller/IWPFWeatherViewController.m; sourceTree = "<group>"; };
-		D4A196A41D90E577009B8D8B /* CommunicationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommunicationHelper.h; path = Model/Helper/CommunicationHelper.h; sourceTree = "<group>"; };
-		D4A196A51D90E577009B8D8B /* CommunicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommunicationHelper.m; path = Model/Helper/CommunicationHelper.m; sourceTree = "<group>"; };
+		D4A196A41D90E577009B8D8B /* IWPFCommunicationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFCommunicationHelper.h; path = Model/Helper/IWPFCommunicationHelper.h; sourceTree = "<group>"; };
+		D4A196A51D90E577009B8D8B /* IWPFCommunicationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFCommunicationHelper.m; path = Model/Helper/IWPFCommunicationHelper.m; sourceTree = "<group>"; };
 		D4A617D71D92386F005394DE /* IWPFCurrentWeatherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFCurrentWeatherCell.h; path = View/CellView/IWPFCurrentWeatherCell.h; sourceTree = "<group>"; };
 		D4A617D81D92386F005394DE /* IWPFCurrentWeatherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFCurrentWeatherCell.m; path = View/CellView/IWPFCurrentWeatherCell.m; sourceTree = "<group>"; };
+		D4A9CB271DAE2C2E0051E469 /* IWPFWeatherTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFWeatherTransform.h; path = Model/Transform/IWPFWeatherTransform.h; sourceTree = "<group>"; };
+		D4A9CB281DAE2C2E0051E469 /* IWPFWeatherTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherTransform.m; path = Model/Transform/IWPFWeatherTransform.m; sourceTree = "<group>"; };
 		D4E2D80B1D98B3A300047F48 /* IWPFTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFTools.h; path = Model/Tools/IWPFTools.h; sourceTree = "<group>"; };
 		D4E2D80C1D98B3A300047F48 /* IWPFTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFTools.m; path = Model/Tools/IWPFTools.m; sourceTree = "<group>"; };
+		D4F0EF0B1DADE17200A59363 /* IWPFWeatherDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFWeatherDataHelper.h; path = Model/Helper/IWPFWeatherDataHelper.h; sourceTree = "<group>"; };
+		D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherDataHelper.m; path = Model/Helper/IWPFWeatherDataHelper.m; sourceTree = "<group>"; };
 		D4F152881D99196F00754A94 /* IWPFLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFLaunchViewController.h; path = Controller/IWPFLaunchViewController.h; sourceTree = "<group>"; };
 		D4F152891D99196F00754A94 /* IWPFLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFLaunchViewController.m; path = Controller/IWPFLaunchViewController.m; sourceTree = "<group>"; };
 		E329D9F65F5A00562FB3118F /* libPods-FunctionDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,7 +280,6 @@
 				D4302A1C1D9126A800501060 /* IWPFTestCase.m */,
 				D4A196711D90D1EC009B8D8B /* FunctionDemoTests.m */,
 				D4A196731D90D1EC009B8D8B /* Info.plist */,
-				D4302A1E1D91284C00501060 /* IWPFCommunicationHelper.m */,
 			);
 			path = FunctionDemoTests;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 		D4A196991D90DB6D009B8D8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D4A9CB231DAE28CF0051E469 /* Transform */,
 				D4E2D80A1D98B37D00047F48 /* Tools */,
 				D4A196A31D90E53E009B8D8B /* Helper */,
 				D4A1969C1D90DB95009B8D8B /* Macros */,
@@ -343,9 +350,11 @@
 			isa = PBXGroup;
 			children = (
 				D41A5BFB1D9A09A90062A5FF /* category */,
-				D4A196A41D90E577009B8D8B /* CommunicationHelper.h */,
-				D4A196A51D90E577009B8D8B /* CommunicationHelper.m */,
+				D4A196A41D90E577009B8D8B /* IWPFCommunicationHelper.h */,
+				D4A196A51D90E577009B8D8B /* IWPFCommunicationHelper.m */,
 				D4302A1A1D9115C900501060 /* IWPFBlockTypeHelper.h */,
+				D4F0EF0B1DADE17200A59363 /* IWPFWeatherDataHelper.h */,
+				D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -355,12 +364,23 @@
 			children = (
 				D4A617D71D92386F005394DE /* IWPFCurrentWeatherCell.h */,
 				D4A617D81D92386F005394DE /* IWPFCurrentWeatherCell.m */,
-				D48207961D9254900095C076 /* IWPFCurrentWeatherView.h */,
-				D48207971D9254900095C076 /* IWPFCurrentWeatherView.m */,
+				D425EF471DACE2DD007C12EE /* IWPFForecastWeatherCell.h */,
+				D425EF481DACE2DD007C12EE /* IWPFForecastWeatherCell.m */,
 				D4026CDE1D9B60C60076E069 /* SideMenuTableViewCell.h */,
 				D4026CDF1D9B60C60076E069 /* SideMenuTableViewCell.m */,
+				D425EF4A1DACE340007C12EE /* IWPFWeatherMapCell.h */,
+				D425EF4B1DACE340007C12EE /* IWPFWeatherMapCell.m */,
 			);
 			name = CellView;
+			sourceTree = "<group>";
+		};
+		D4A9CB231DAE28CF0051E469 /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9CB271DAE2C2E0051E469 /* IWPFWeatherTransform.h */,
+				D4A9CB281DAE2C2E0051E469 /* IWPFWeatherTransform.m */,
+			);
+			name = Transform;
 			sourceTree = "<group>";
 		};
 		D4E2D80A1D98B37D00047F48 /* Tools */ = {
@@ -646,19 +666,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D41A5C011D9A0ABF0062A5FF /* UIBarButtonItem+Helper.m in Sources */,
+				D425EF491DACE2DD007C12EE /* IWPFForecastWeatherCell.m in Sources */,
+				D4F0EF0D1DADE17200A59363 /* IWPFWeatherDataHelper.m in Sources */,
 				D4A617D91D92386F005394DE /* IWPFCurrentWeatherCell.m in Sources */,
+				D425EF4C1DACE340007C12EE /* IWPFWeatherMapCell.m in Sources */,
 				D4F1528A1D99196F00754A94 /* IWPFLaunchViewController.m in Sources */,
 				D4A1965C1D90D1EC009B8D8B /* AppDelegate.m in Sources */,
 				D4026CDA1D9B5A940076E069 /* LeftMenuViewController.m in Sources */,
 				D4A196591D90D1EC009B8D8B /* main.m in Sources */,
 				D4026CE31D9B61F30076E069 /* UIColor+Extension.m in Sources */,
-				D48207981D9254900095C076 /* IWPFCurrentWeatherView.m in Sources */,
 				D4E2D80D1D98B3A300047F48 /* IWPFTools.m in Sources */,
 				D4026CDD1D9B5AA50076E069 /* RightMenuViewController.m in Sources */,
-				D4A196A61D90E577009B8D8B /* CommunicationHelper.m in Sources */,
+				D4A196A61D90E577009B8D8B /* IWPFCommunicationHelper.m in Sources */,
 				D4A196A21D90DC00009B8D8B /* IWPFWeatherViewController.m in Sources */,
 				D48809731D98EFF300B7344E /* IWPFBasicNavigationController.m in Sources */,
 				D41A5BFE1D9A0A580062A5FF /* UIView+Frame.m in Sources */,
+				D4A9CB291DAE2C2E0051E469 /* IWPFWeatherTransform.m in Sources */,
 				D4026CD51D9B53FB0076E069 /* AllViewControllersTool.m in Sources */,
 				D4026CE01D9B60C60076E069 /* SideMenuTableViewCell.m in Sources */,
 			);
@@ -669,7 +692,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A196721D90D1EC009B8D8B /* FunctionDemoTests.m in Sources */,
-				D4302A1F1D91284C00501060 /* IWPFCommunicationHelper.m in Sources */,
 				D4302A1D1D9126A800501060 /* IWPFTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

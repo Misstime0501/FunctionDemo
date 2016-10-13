@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MacroOfDefine.h"
 
-typedef NS_ENUM(NSUInteger, LHTDScrollViewCellType){
-    LHTDScrollViewCellTypeCurrentWeather    = 1,
-    LHTDScrollViewCellTypeTomorrowWeather,
-    LHTDScrollViewCellTypeForecastWeather,
-    LHTDScrollViewCellTypeWeatherMap,
+typedef NS_ENUM(NSUInteger, IWPFScrollViewCellType){
+    IWPFScrollViewCellTypeCurrentWeather    = 0,
+    IWPFScrollViewCellTypeTomorrowWeather,
+    IWPFScrollViewCellTypeForecastWeather,
+    IWPFScrollViewCellTypeWeatherMap,
 };
 
 static const CGFloat kNumberOfSections                  = 1.0;
@@ -25,10 +25,12 @@ static const CGFloat kCellTypeTomorrowWeatherHeight     = 150.0;
 static const CGFloat kCellTypeForecastWeatherHeight     = 284.0;
 static const CGFloat kCellTypeWeatherMapHeight          = 284.0;
 
-static NSString *const kTableViewCellTypeCurrentWeatherIdentifier   = @"LHTDCellTypeCurrentWeatherIdentifier";
-static NSString *const kTableViewCellTypeTomorrowWeatherIdentifier  = @"LHTDCellTypeTomorrowWeatherIdentifier";
-static NSString *const kTableViewCellTypeForecastWeatherIdentifier  = @"LHTDCellTypeForecastWeatherIdentifier";
-static NSString *const kTableViewCellTypeWeatherMapIdentifier       = @"LHTDCellTypeWeatherMapIdentifier";
+static const CGFloat kCellTypeDefaultHeight             = 65.0;
+
+static NSString *const kTableViewCellTypeCurrentWeatherIdentifier   = @"IWPFCellTypeCurrentWeatherIdentifier";
+static NSString *const kTableViewCellTypeTomorrowWeatherIdentifier  = @"IWPFCellTypeTomorrowWeatherIdentifier";
+static NSString *const kTableViewCellTypeForecastWeatherIdentifier  = @"IWPFCellTypeForecastWeatherIdentifier";
+static NSString *const kTableViewCellTypeWeatherMapIdentifier       = @"IWPFCellTypeWeatherMapIdentifier";
 
 
 @interface IWPFWeatherViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>

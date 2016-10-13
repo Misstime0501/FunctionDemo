@@ -7,7 +7,7 @@
 //
 
 #import "AllViewControllersTool.h"
-#import "CommunicationHelper.h"
+#import "IWPFCommunicationHelper.h"
 #import "IWPFLaunchViewController.h"
 #import "IWPFTools.h"
 #import "SVProgressHUD.h"
@@ -79,7 +79,7 @@
 
 - (void)getNewImage
 {
-    [CommunicationHelper requestMethUsePostWithPath:HTTPS_LAUCH_SCREEN_IMAGE
+    [IWPFCommunicationHelper requestMethUsePostWithPath:HTTPS_LAUCH_SCREEN_IMAGE
                                              params:nil
                                             success:^(id responseObject) {
                                                         NSString *imageURL  = [[responseObject objectForKey:@"data"] objectForKey:@"picurl"];
