@@ -42,22 +42,17 @@
 
 @implementation IWPFWeatherDataHelper
 
-+ (void)fetchWeatherDataCityName:(NSString *)cityName success:(IWPFRequestSuccessBlock)success failure:(IWPFRequestFailureBlock)failure
++ (void)fetchWeatherDataCityName:(NSString *)cityName
+                     requestType:(NSString *)requestType
+                         success:(IWPFRequestSuccessBlock)success
+                         failure:(IWPFRequestFailureBlock)failure
 {
-
-//    @[ @"forecast" , @"observe" , @"alarm" , @"index" , @"air"]
-    // http://api.weatherdt.com/common/?area=站点ID&type=天气数据大类[数据小类]&key=iBmCdU7VCPvFq1XJ52jAAknYJ%2B8
-  
-    IWPFLog(@"%@", [IWPFWeatherTransform integerNumberWithAddressText:cityName]);
-    NSString *requestType = @"observe";
-    
     NSString *requestPath = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@%@%@%@",
                              WEATHER_RQ_PATH,
                              WEATHER_RQ_AREA, [IWPFWeatherTransform integerNumberWithAddressText:cityName], WEATHER_RQ_CONNECTOR,
                              WEATHER_RQ_TYPE, requestType, WEATHER_RQ_CONNECTOR,
                              WEATHER_RQ_KEY , WEATHER_RQ_PRIVATE_KEY];
-
-    IWPFLog(@"请求地址 = %@", requestPath);
+    IWPFLog(@"%@", requestPath);
     [IWPFCommunicationHelper requestMethUseGetWithPath:requestPath
                                                 params:nil
                                                success:^(id responseObject) {

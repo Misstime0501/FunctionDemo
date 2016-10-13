@@ -86,15 +86,14 @@
     IWPFLog(@"当前温度文字框被点击");
     
     [IWPFWeatherDataHelper fetchWeatherDataCityName:@"北京"
+                                        requestType:@"forecast"
                                             success:^(id responseObject) {
-                                                
                                                 IWPFLog(@"气象返回信息 = %@" , responseObject);
-        
                                             }
                                             failure:^(NSError *error) {
-                                                
                                                 IWPFLog(@"气象返回的错误信息 = %@", error);
-        
+                                                IWPFLog(@"气象返回的错误信息的编码 = %ld", (long)error.code);
+                                                IWPFLog(@"气象返回的错误信息的内容 = %@", error.userInfo);
     }];
     
     
@@ -118,15 +117,6 @@
     }
     return _currentWeatherState;
 }
-
-
-
-
-
-
-
-
-
 
 
 

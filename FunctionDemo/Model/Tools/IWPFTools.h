@@ -55,8 +55,13 @@
  */
 + (NSData *)useJsonChangeDictionaryToData:(NSDictionary *)dictionary;
 
+/**
+ 检查文字是否安全
 
+ @param checkString 检查的字符串
 
+ @return 返回的安全字符串
+ */
 + (NSString *)safeString:(NSString *)checkString;
 
 

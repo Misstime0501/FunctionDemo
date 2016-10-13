@@ -12,9 +12,19 @@
 
 @interface IWPFWeatherDataHelper : NSObject
 
+
+
+// http://api.weatherdt.com/common/?area=站点ID&type=天气数据大类[数据小类]&key=iBmCdU7VCPvFq1XJ52jAAknYJ%2B8
+// @[ @"forecast" , @"observe" , @"alarm" , @"index" , @"air"]
+
 + (void)fetchWeatherDataCityName:(NSString *)cityName
+                     requestType:(NSString *)requestType
                          success:(IWPFRequestSuccessBlock)success
                          failure:(IWPFRequestFailureBlock)failure;
+
+
+
+
 
 
 
