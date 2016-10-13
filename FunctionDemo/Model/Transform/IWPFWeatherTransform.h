@@ -50,12 +50,53 @@
 
 @interface IWPFWeatherTransform : NSObject
 
-+ (NSString *)fontTextWithWeatherNumber:(NSNumber *)number;
+// 通过城市名得到对应的城市 areaid
++ (NSString *)integerNumberWithAddressText:(NSString *)addressText;
 
-
+// 通过 areaid 获取城市名
 + (NSString *)fontTextWithAddressNumber:(NSNumber *)number;
 
+#pragma mark - 常规预报
+// 1001001       1小时 和 3小时 小时预报
++ (NSString *)lessThanThreeHoursForecastInformationFromFetchNumber:(NSNumber *)fetchNumber;
 
-+ (NSString *)integerNumberWithAddressText:(NSString *)addressText;
+// 1001001       12 小时预报
++ (NSString *)moreThanThreeHoursForecastInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+// 1001001       24 小时预报
++ (NSString *)moreThanTwelveHoursForecastInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+// 天气现象
++ (NSString *)weatherPhenomenaInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+#pragma mark - 实况
+// 1001002       实况
++ (NSString *)observeInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+#pragma mark - 预警
+// 1001003       预警
++ (NSString *)alarmInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+// 预警信号
++ (NSString *)alarmNumberInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+// 预警信号
++ (NSString *)alarmLevelInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+#pragma mark - 生活指数
+// 1001004       24 生活指数
++ (NSString *)moreThanTwelveHoursIndexInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+#pragma mark - 空气质量
+// 2001006       空气质量
++ (NSString *)airInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+#pragma mark - 风
+// 风向
++ (NSString *)windDirectionInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
+// 风力
++ (NSString *)windPowerInformationFromFetchNumber:(NSNumber *)fetchNumber;
+
 
 @end

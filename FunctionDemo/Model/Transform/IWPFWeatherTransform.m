@@ -14,15 +14,6 @@
 
 @implementation IWPFWeatherTransform
 
-+ (NSString *)fontTextWithWeatherNumber:(NSNumber *)number
-{
-    NSString *weatherString = [[NSString alloc] init];
-    
-    
-    return weatherString;
-}
-
-
 + (NSString *)fontTextWithAddressNumber:(NSNumber *)number
 {
     NSString *addressString = [[NSString alloc] init];
