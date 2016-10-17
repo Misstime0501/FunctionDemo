@@ -1,4 +1,4 @@
-# Uncomment this line to define a global platform for your project
+#Uncomment this line to define a global platform for your project
 # platform :ios, '9.0'
 
 target 'FunctionDemo' do
@@ -14,6 +14,10 @@ target 'FunctionDemo' do
   pod 'AFNetworking', '~> 3.0'
   pod 'SVProgressHUD', '~> 2.0'  
   pod 'Masonry', '~> 1.0'
+  
+  pod 'AMap3DMap'  #3D地图SDK
+  # pod 'AMap2DMap' #2D地图SDK (2D和3D不能同时使⽤用)
+  pod 'AMapSearch' #搜索服务SDK  
 
   target 'FunctionDemoTests' do
     inherit! :search_paths
