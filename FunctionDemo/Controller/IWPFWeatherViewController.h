@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
 #import "MacroOfDefine.h"
 
 typedef NS_ENUM(NSUInteger, IWPFScrollViewCellType){
@@ -33,7 +36,14 @@ static NSString *const kTableViewCellTypeForecastWeatherIdentifier  = @"IWPFCell
 static NSString *const kTableViewCellTypeWeatherMapIdentifier       = @"IWPFCellTypeWeatherMapIdentifier";
 
 
-@interface IWPFWeatherViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>
+@interface IWPFWeatherViewController : UIViewController
+<
+UITableViewDelegate
+, UITableViewDataSource
+, CLLocationManagerDelegate
+>
+
+@property (nonatomic, strong)   CLLocationManager   *locationManager;
 
 @property (strong, nonatomic)   UITableView         *tableView;
 

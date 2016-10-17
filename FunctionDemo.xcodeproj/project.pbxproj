@@ -20,6 +20,7 @@
 		D425EF491DACE2DD007C12EE /* IWPFForecastWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D425EF481DACE2DD007C12EE /* IWPFForecastWeatherCell.m */; };
 		D425EF4C1DACE340007C12EE /* IWPFWeatherMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D425EF4B1DACE340007C12EE /* IWPFWeatherMapCell.m */; };
 		D4302A1D1D9126A800501060 /* IWPFTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = D4302A1C1D9126A800501060 /* IWPFTestCase.m */; };
+		D471E9241DB0D47800D37D57 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D471E9231DB0D47800D37D57 /* MapKit.framework */; };
 		D48809731D98EFF300B7344E /* IWPFBasicNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D48809721D98EFF300B7344E /* IWPFBasicNavigationController.m */; };
 		D4A196591D90D1EC009B8D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A196581D90D1EC009B8D8B /* main.m */; };
 		D4A1965C1D90D1EC009B8D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A1965B1D90D1EC009B8D8B /* AppDelegate.m */; };
@@ -34,6 +35,7 @@
 		D4A9CB291DAE2C2E0051E469 /* IWPFWeatherTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9CB281DAE2C2E0051E469 /* IWPFWeatherTransform.m */; };
 		D4E2D80D1D98B3A300047F48 /* IWPFTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E2D80C1D98B3A300047F48 /* IWPFTools.m */; };
 		D4E9FCD21DAF866900EA1734 /* IWPFErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E9FCD11DAF866900EA1734 /* IWPFErrorHelper.m */; };
+		D4E9FCD41DAF8E8B00EA1734 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E9FCD31DAF8E8B00EA1734 /* CoreLocation.framework */; };
 		D4F0EF0D1DADE17200A59363 /* IWPFWeatherDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */; };
 		D4F1528A1D99196F00754A94 /* IWPFLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F152891D99196F00754A94 /* IWPFLaunchViewController.m */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,7 @@
 		D4302A1A1D9115C900501060 /* IWPFBlockTypeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IWPFBlockTypeHelper.h; sourceTree = "<group>"; };
 		D4302A1B1D9126A800501060 /* IWPFTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPFTestCase.h; sourceTree = "<group>"; };
 		D4302A1C1D9126A800501060 /* IWPFTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPFTestCase.m; sourceTree = "<group>"; };
+		D471E9231DB0D47800D37D57 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D48809711D98EFF300B7344E /* IWPFBasicNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFBasicNavigationController.h; path = Controller/IWPFBasicNavigationController.h; sourceTree = "<group>"; };
 		D48809721D98EFF300B7344E /* IWPFBasicNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFBasicNavigationController.m; path = Controller/IWPFBasicNavigationController.m; sourceTree = "<group>"; };
 		D4A196541D90D1EC009B8D8B /* FunctionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunctionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +117,7 @@
 		D4E2D80C1D98B3A300047F48 /* IWPFTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFTools.m; path = Model/Tools/IWPFTools.m; sourceTree = "<group>"; };
 		D4E9FCD01DAF866900EA1734 /* IWPFErrorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFErrorHelper.h; path = Model/Helper/IWPFErrorHelper.h; sourceTree = "<group>"; };
 		D4E9FCD11DAF866900EA1734 /* IWPFErrorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFErrorHelper.m; path = Model/Helper/IWPFErrorHelper.m; sourceTree = "<group>"; };
+		D4E9FCD31DAF8E8B00EA1734 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D4F0EF0B1DADE17200A59363 /* IWPFWeatherDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFWeatherDataHelper.h; path = Model/Helper/IWPFWeatherDataHelper.h; sourceTree = "<group>"; };
 		D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherDataHelper.m; path = Model/Helper/IWPFWeatherDataHelper.m; sourceTree = "<group>"; };
 		D4F152881D99196F00754A94 /* IWPFLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFLaunchViewController.h; path = Controller/IWPFLaunchViewController.h; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D471E9241DB0D47800D37D57 /* MapKit.framework in Frameworks */,
+				D4E9FCD41DAF8E8B00EA1734 /* CoreLocation.framework in Frameworks */,
 				D0BDA832F08823B2F7EFCD96 /* libPods-FunctionDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +173,8 @@
 		C6C7FF55FA59E5F03F5B6EBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D471E9231DB0D47800D37D57 /* MapKit.framework */,
+				D4E9FCD31DAF8E8B00EA1734 /* CoreLocation.framework */,
 				6C0E37770A8116D5FA2E208C /* libPods-FunctionDemo.a */,
 				E329D9F65F5A00562FB3118F /* libPods-FunctionDemoTests.a */,
 				7699A4E1962E29167205B0F2 /* libPods-FunctionDemoUITests.a */,

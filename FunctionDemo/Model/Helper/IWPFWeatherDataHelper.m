@@ -65,5 +65,25 @@
 }
 
 
++ (NSArray *)allCitiesDics
+{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"allCitiesDics" ofType:@"plist"];
+    return [NSArray arrayWithContentsOfFile:filePath];
+}
+
+
++ (NSString *)cityidOfCityname:(NSString *)cityname
+{
+    NSArray *allCitiesDics = [IWPFWeatherDataHelper allCitiesDics];
+    for (NSInteger i = 0; i < allCitiesDics.count; i++)
+    {
+        NSDictionary *cityDic = allCitiesDics[i];
+        if ([cityname isEqualToString:cityDic[@"city"]])
+        {
+            return cityDic[@"id"];
+        }
+    }
+    return nil;
+}
 
 @end

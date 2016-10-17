@@ -24,7 +24,7 @@
 
 
 
-
++ (NSString *)cityidOfCityname:(NSString *)cityname;
 
 
 
