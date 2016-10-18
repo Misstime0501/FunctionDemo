@@ -9,6 +9,9 @@
 #ifndef MacroOfDefine_Const_h
 #define MacroOfDefine_Const_h
 
+#define GAODEMAP_API_KEY                                            @"80ab9e24a682a5fe590b15e08b82ccda"
+
+
 #pragma mark - Static Coordinate Const
 
 #define ZERO                                                        0

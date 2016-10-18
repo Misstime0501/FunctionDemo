@@ -34,10 +34,14 @@
 		D4A617D91D92386F005394DE /* IWPFCurrentWeatherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A617D81D92386F005394DE /* IWPFCurrentWeatherCell.m */; };
 		D4A9CB291DAE2C2E0051E469 /* IWPFWeatherTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9CB281DAE2C2E0051E469 /* IWPFWeatherTransform.m */; };
 		D4E2D80D1D98B3A300047F48 /* IWPFTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E2D80C1D98B3A300047F48 /* IWPFTools.m */; };
+		D4E321B11DB4B524006F5A13 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = D4E321B01DB4B524006F5A13 /* locations.json */; };
 		D4E9FCD21DAF866900EA1734 /* IWPFErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E9FCD11DAF866900EA1734 /* IWPFErrorHelper.m */; };
 		D4E9FCD41DAF8E8B00EA1734 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E9FCD31DAF8E8B00EA1734 /* CoreLocation.framework */; };
 		D4F0EF0D1DADE17200A59363 /* IWPFWeatherDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */; };
 		D4F1528A1D99196F00754A94 /* IWPFLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F152891D99196F00754A94 /* IWPFLaunchViewController.m */; };
+		D4FFFAF11DB5EF0F00C6C5DA /* allCitiesDics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4FFFAF01DB5EF0F00C6C5DA /* allCitiesDics.plist */; };
+		D4FFFAF41DB5F47200C6C5DA /* PinYinSearchLib in Resources */ = {isa = PBXBuildFile; fileRef = D4FFFAF31DB5F47200C6C5DA /* PinYinSearchLib */; };
+		D4FFFAF61DB5F4D200C6C5DA /* allCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4FFFAF51DB5F4D200C6C5DA /* allCities.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +119,7 @@
 		D4A9CB281DAE2C2E0051E469 /* IWPFWeatherTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherTransform.m; path = Model/Transform/IWPFWeatherTransform.m; sourceTree = "<group>"; };
 		D4E2D80B1D98B3A300047F48 /* IWPFTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFTools.h; path = Model/Tools/IWPFTools.h; sourceTree = "<group>"; };
 		D4E2D80C1D98B3A300047F48 /* IWPFTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFTools.m; path = Model/Tools/IWPFTools.m; sourceTree = "<group>"; };
+		D4E321B01DB4B524006F5A13 /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = locations.json; path = Resource/locations.json; sourceTree = "<group>"; };
 		D4E9FCD01DAF866900EA1734 /* IWPFErrorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFErrorHelper.h; path = Model/Helper/IWPFErrorHelper.h; sourceTree = "<group>"; };
 		D4E9FCD11DAF866900EA1734 /* IWPFErrorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFErrorHelper.m; path = Model/Helper/IWPFErrorHelper.m; sourceTree = "<group>"; };
 		D4E9FCD31DAF8E8B00EA1734 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -122,6 +127,9 @@
 		D4F0EF0C1DADE17200A59363 /* IWPFWeatherDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFWeatherDataHelper.m; path = Model/Helper/IWPFWeatherDataHelper.m; sourceTree = "<group>"; };
 		D4F152881D99196F00754A94 /* IWPFLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IWPFLaunchViewController.h; path = Controller/IWPFLaunchViewController.h; sourceTree = "<group>"; };
 		D4F152891D99196F00754A94 /* IWPFLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IWPFLaunchViewController.m; path = Controller/IWPFLaunchViewController.m; sourceTree = "<group>"; };
+		D4FFFAF01DB5EF0F00C6C5DA /* allCitiesDics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = allCitiesDics.plist; path = Resource/allCitiesDics.plist; sourceTree = "<group>"; };
+		D4FFFAF31DB5F47200C6C5DA /* PinYinSearchLib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PinYinSearchLib; path = Model/ExternalLibrary/PinYinSearchLib; sourceTree = "<group>"; };
+		D4FFFAF51DB5F4D200C6C5DA /* allCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = allCities.plist; path = Resource/allCities.plist; sourceTree = "<group>"; };
 		E329D9F65F5A00562FB3118F /* libPods-FunctionDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FunctionDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E815D586EE2CA791D5A9C94B /* Pods-FunctionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemo/Pods-FunctionDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F657ADF43AC3C6C85BF7F2A5 /* Pods-FunctionDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FunctionDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FunctionDemoUITests/Pods-FunctionDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +220,8 @@
 		D41A5BFA1D9A08150062A5FF /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D4FFFAF21DB5F45100C6C5DA /* Libraries */,
+				D4E321AF1DB4B513006F5A13 /* Resources */,
 				D4A196571D90D1EC009B8D8B /* Supporting Files */,
 				D4A1965A1D90D1EC009B8D8B /* AppDelegate.h */,
 				D4A1965B1D90D1EC009B8D8B /* AppDelegate.m */,
@@ -405,6 +415,16 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
+		D4E321AF1DB4B513006F5A13 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4FFFAF51DB5F4D200C6C5DA /* allCities.plist */,
+				D4FFFAF01DB5EF0F00C6C5DA /* allCitiesDics.plist */,
+				D4E321B01DB4B524006F5A13 /* locations.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		D4F152871D99192500754A94 /* LaunchViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +432,14 @@
 				D4F152891D99196F00754A94 /* IWPFLaunchViewController.m */,
 			);
 			name = LaunchViewController;
+			sourceTree = "<group>";
+		};
+		D4FFFAF21DB5F45100C6C5DA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D4FFFAF31DB5F47200C6C5DA /* PinYinSearchLib */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,8 +557,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A196671D90D1EC009B8D8B /* LaunchScreen.storyboard in Resources */,
+				D4FFFAF41DB5F47200C6C5DA /* PinYinSearchLib in Resources */,
 				D4A196641D90D1EC009B8D8B /* Assets.xcassets in Resources */,
+				D4E321B11DB4B524006F5A13 /* locations.json in Resources */,
+				D4FFFAF11DB5EF0F00C6C5DA /* allCitiesDics.plist in Resources */,
 				D4A196621D90D1EC009B8D8B /* Main.storyboard in Resources */,
+				D4FFFAF61DB5F4D200C6C5DA /* allCities.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

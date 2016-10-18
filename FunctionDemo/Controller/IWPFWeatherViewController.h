@@ -26,7 +26,7 @@ static const CGFloat kRowsInSection                     = 4.0;
 static const CGFloat kCellTypeCurrentWeatherHeight      = 568.0;
 static const CGFloat kCellTypeTomorrowWeatherHeight     = 150.0;
 static const CGFloat kCellTypeForecastWeatherHeight     = 284.0;
-static const CGFloat kCellTypeWeatherMapHeight          = 284.0;
+static const CGFloat kCellTypeWeatherMapHeight          = 568.0; //284.0;
 
 static const CGFloat kCellTypeDefaultHeight             = 65.0;
 

@@ -6,15 +6,20 @@
 //  Copyright © 2016年 Chen Li. All rights reserved.
 //
 
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
 #import "AppDelegate.h"
 #import "MacroOfDefine.h"
 #import "IWPFLaunchViewController.h"
+
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [AMapServices sharedServices].apiKey = GAODEMAP_API_KEY;
     
     self.window                                        = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     IWPFLaunchViewController *launchViewController     = [[IWPFLaunchViewController alloc] init];

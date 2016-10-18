@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <MAMapKit/MAMapKit.h>
 
-@interface IWPFWeatherMapCell : UITableViewCell
+@interface IWPFWeatherMapCell : UITableViewCell<MAMapViewDelegate>
+
+@property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, strong) MAHeatMapTileOverlay *heatMapTileOverlay;
+
+@property (nonatomic, strong) UIView *controls;
+
+
+- (instancetype)initWithFrame:(CGRect)frame;
 
 @end

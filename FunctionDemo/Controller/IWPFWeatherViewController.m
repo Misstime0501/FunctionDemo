@@ -12,6 +12,7 @@
 #import "UIViewController+MMDrawerController.h"
 
 #import "IWPFCurrentWeatherCell.h"
+#import "IWPFWeatherMapCell.h"
 #import "IWPFWeatherDataHelper.h"
 
 
@@ -99,9 +100,20 @@
             return cell;
         }
             break;
+        case IWPFScrollViewCellTypeWeatherMap:
+        {
+            IWPFWeatherMapCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellTypeWeatherMapIdentifier];
+            if (!cell)
+            {
+                cell = [[IWPFWeatherMapCell alloc] initWithFrame:CGRectMake(ZERO, ZERO, SCREEN_WIDTH, kCellTypeWeatherMapHeight)];
+            }
+            cell.selectionStyle = NO;
+            return cell;
+        }
+            break;
         case IWPFScrollViewCellTypeTomorrowWeather:
         case IWPFScrollViewCellTypeForecastWeather:
-        case IWPFScrollViewCellTypeWeatherMap:
+        
         default:
         {
             static NSString *CellIdentifier = @"Cell";
