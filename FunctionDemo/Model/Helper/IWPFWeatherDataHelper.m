@@ -47,6 +47,9 @@
                          success:(IWPFRequestSuccessBlock)success
                          failure:(IWPFRequestFailureBlock)failure
 {
+    
+    
+    
     NSString *requestPath = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@%@%@%@",
                              WEATHER_RQ_PATH,
                              WEATHER_RQ_AREA, [IWPFWeatherTransform integerNumberWithAddressText:cityName], WEATHER_RQ_CONNECTOR,
@@ -63,6 +66,8 @@
     }];
     
 }
+
+
 
 
 + (NSArray *)allCitiesDics

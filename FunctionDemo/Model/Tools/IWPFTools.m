@@ -49,7 +49,6 @@
     return NO;
 }
 
-
 + (NSString *)safeString:(NSString *)checkString
 {
     if (![IWPFTools checkStringEqualNull:checkString])
